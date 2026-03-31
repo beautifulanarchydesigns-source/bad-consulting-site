@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beautiful Anarchy Designs — Consulting</title>
+<title>Beautiful Anarchy Designs &mdash; Consulting</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -28,7 +28,7 @@ nav a:hover{color:var(--gold);}
 .hero-claim{margin-top:2.5rem;font-size:1.35rem;font-style:italic;font-weight:300;line-height:1.5;color:rgba(240,237,230,0.75);max-width:480px;border-left:2px solid var(--gold);padding-left:1.2rem;animation:fadeUp 0.8s 0.2s ease both;}
 .hero-claim strong{color:var(--white);font-style:normal;font-weight:600;}
 .hero-actions{margin-top:3rem;display:flex;gap:1.2rem;align-items:center;animation:fadeUp 0.8s 0.3s ease both;}
-.btn-primary{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;background:var(--gold);color:var(--black);padding:1rem 2.2rem;transition:background 0.2s,transform 0.15s;}
+.btn-primary{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;background:var(--gold);color:var(--black);padding:1rem 2.2rem;transition:background 0.2s,transform 0.15s;cursor:pointer;}
 .btn-primary:hover{background:var(--white);transform:translateY(-2px);}
 .btn-ghost{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;color:rgba(240,237,230,0.6);border-bottom:1px solid rgba(240,237,230,0.3);padding-bottom:2px;transition:color 0.2s,border-color 0.2s;}
 .btn-ghost:hover{color:var(--gold);border-color:var(--gold);}
@@ -68,7 +68,7 @@ nav a:hover{color:var(--gold);}
 .service-body{font-size:1.05rem;font-weight:300;line-height:1.7;color:rgba(240,237,230,0.6);font-style:italic;}
 .service-detail{margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,0.1);}
 .service-detail-item{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;color:rgba(240,237,230,0.4);padding:0.4rem 0;display:flex;align-items:center;gap:0.7rem;}
-.service-detail-item::before{content:'→';color:var(--gold);}
+.service-detail-item::before{content:'&#8594;';color:var(--gold);}
 #claim{background:var(--mid);padding:8rem 3rem;position:relative;overflow:hidden;border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);}
 #claim::before{content:'BAD';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:30vw;color:rgba(201,168,76,0.03);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;line-height:1;}
 .claim-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2;}
@@ -111,24 +111,9 @@ nav a:hover{color:var(--gold);}
 .bundle-price-block{text-align:right;flex-shrink:0;}
 .bundle-price{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--gold);line-height:1;}
 .bundle-savings{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,230,0.3);margin-top:0.3rem;}
-.bundle-cta{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);color:var(--gold);padding:0.9rem 2rem;transition:background 0.2s,color 0.2s;flex-shrink:0;}
+.bundle-cta{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);color:var(--gold);padding:0.9rem 2rem;transition:background 0.2s,color 0.2s;flex-shrink:0;cursor:pointer;}
 .bundle-cta:hover{background:var(--gold);color:var(--black);}
 .pricing-disclaimer{margin-top:2.5rem;font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.2em;color:rgba(240,237,230,0.2);text-transform:uppercase;line-height:1.8;}
-#audience{padding:8rem 3rem;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
-.audience-body{font-size:1.25rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(240,237,230,0.65);}
-.audience-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem;}
-.audience-list li{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,230,0.5);display:flex;align-items:center;gap:1rem;}
-.audience-list li::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0;}
-.tagline-block{border:1px solid rgba(201,168,76,0.2);padding:3.5rem;position:relative;}
-.tagline-block::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:8rem;color:var(--gold);opacity:0.15;position:absolute;top:-1rem;left:1rem;line-height:1;}
-.tagline-quote{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;font-weight:300;line-height:1.4;color:var(--white);position:relative;z-index:1;}
-.tagline-attr{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-top:1.5rem;}
-.corner-bracket{position:absolute;width:20px;height:20px;border-color:var(--gold);border-style:solid;opacity:0.4;}
-.corner-bracket.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}
-.corner-bracket.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
-.corner-bracket.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}
-.corner-bracket.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
-/* PORTFOLIO */
 #portfolio{padding:8rem 3rem;background:var(--mid);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);}
 .portfolio-inner{max-width:1400px;margin:0 auto;}
 .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(201,168,76,0.1);margin-top:4rem;}
@@ -148,18 +133,31 @@ nav a:hover{color:var(--gold);}
 .case-deliverable::before{content:'';width:16px;height:1px;background:var(--gold);flex-shrink:0;}
 .case-accent{position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.5s ease;}
 .case-card:hover .case-accent{transform:scaleX(1);}
-@media(max-width:900px){#portfolio{padding:5rem 1.5rem;}.portfolio-grid{grid-template-columns:1fr;}}
+#audience{padding:8rem 3rem;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
+.audience-body{font-size:1.25rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(240,237,230,0.65);}
+.audience-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem;}
+.audience-list li{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,230,0.5);display:flex;align-items:center;gap:1rem;}
+.audience-list li::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0;}
+.tagline-block{border:1px solid rgba(201,168,76,0.2);padding:3.5rem;position:relative;}
+.tagline-block::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:8rem;color:var(--gold);opacity:0.15;position:absolute;top:-1rem;left:1rem;line-height:1;}
+.tagline-quote{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;font-weight:300;line-height:1.4;color:var(--white);position:relative;z-index:1;}
+.tagline-attr{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-top:1.5rem;}
+.corner-bracket{position:absolute;width:20px;height:20px;border-color:var(--gold);border-style:solid;opacity:0.4;}
+.corner-bracket.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.corner-bracket.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
+.corner-bracket.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}
+.corner-bracket.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
 #cta{background:var(--gold);padding:7rem 3rem;text-align:center;position:relative;overflow:hidden;}
 #cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0px,transparent 8px,rgba(0,0,0,0.04) 8px,rgba(0,0,0,0.04) 9px);}
 .cta-inner{position:relative;z-index:1;}
 .cta-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,6rem);color:var(--black);line-height:0.95;margin-bottom:1.5rem;}
 .cta-sub{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:rgba(10,10,10,0.65);margin-bottom:3rem;}
-.btn-dark{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;background:var(--black);color:var(--gold);padding:1.2rem 3rem;display:inline-block;transition:background 0.2s,transform 0.15s;}
+.btn-dark{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;background:var(--black);color:var(--gold);padding:1.2rem 3rem;display:inline-block;transition:background 0.2s,transform 0.15s;cursor:pointer;}
 .btn-dark:hover{background:rgba(10,10,10,0.85);transform:translateY(-2px);}
 footer{padding:3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(201,168,76,0.1);}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.15em;color:var(--gold);}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:rgba(240,237,230,0.3);}
-.footer-contact{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;color:rgba(240,237,230,0.35);text-decoration:none;transition:color 0.2s;}
+.footer-contact{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;color:rgba(240,237,230,0.35);text-decoration:none;transition:color 0.2s;cursor:pointer;}
 .footer-contact:hover{color:var(--gold);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -181,6 +179,8 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   .pricing-grid{grid-template-columns:1fr;}
   .bundle-row{flex-direction:column;align-items:flex-start;padding:2rem;}
   .bundle-price-block{text-align:left;}
+  #portfolio{padding:5rem 1.5rem;}
+  .portfolio-grid{grid-template-columns:1fr;}
   #audience{grid-template-columns:1fr;gap:4rem;padding:5rem 1.5rem;}
   .claim-pillars{flex-direction:column;gap:2rem;}
   footer{flex-direction:column;gap:1rem;text-align:center;}
@@ -188,6 +188,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
 </style>
 </head>
 <body>
+
 <header>
   <div class="logo-block">
     <span class="logo-main">Beautiful Anarchy Designs</span>
@@ -348,15 +349,87 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
         <div class="bundle-price">$1,800</div>
         <div class="bundle-savings">Saves you ~$500 vs. individual rates</div>
       </div>
-      <a href="#" class="bundle-cta" onclick="var e='BeautifulAnarchyDesigns'+'@'+'gmail.com';window.location='mailto:'+e+'?subject=Founding Client Bundle Inquiry';return false;">Claim This Rate</a>
+      <a href="#" class="bundle-cta" id="bundleBtn">Claim This Rate</a>
     </div>
     <div class="pricing-disclaimer">Founding client rates are time-limited and will not be offered again after the first 3&ndash;5 engagements. &nbsp;&middot;&nbsp; Direct access to principal on every project. &nbsp;&middot;&nbsp; Faster turnaround than industry standard. &nbsp;&middot;&nbsp; Retainer options available after first engagement.</div>
   </div>
 </section>
 
+<section id="portfolio">
+  <div class="portfolio-inner">
+    <div class="section-header">
+      <span class="section-label">// 03 &mdash; The Work in Practice</span>
+      <div class="section-rule"></div>
+      <h2 class="section-title">Case Studies</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="case-card">
+        <div class="case-accent"></div>
+        <div class="case-card-top"><span class="case-format">Short Film &middot; Horror / Thriller</span><span class="case-status">Binder Complete</span></div>
+        <h3 class="case-title">The Butcher</h3>
+        <div class="case-genre">Psychological Horror &middot; New Orleans</div>
+        <div class="case-rule"></div>
+        <p class="case-desc">A full production package built from the ground up. Script analysis identified structural load points and tonal inconsistencies before a single dollar moved. Budget architecture built to New Orleans production realities with Louisiana tax credit integration baked in from line one.</p>
+        <div class="case-deliverables">
+          <div class="case-deliverable">Script analysis &amp; structural diagnosis</div>
+          <div class="case-deliverable">Full investor pitch packet (P1&ndash;P8)</div>
+          <div class="case-deliverable">23-section production bible</div>
+          <div class="case-deliverable">New Orleans line-item budget w/ tax credit modeling</div>
+          <div class="case-deliverable">Standalone investor leave-behind</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-accent"></div>
+        <div class="case-card-top"><span class="case-format">Short Film &middot; Western Gothic</span><span class="case-status">Bible Complete</span></div>
+        <h3 class="case-title">BAIT</h3>
+        <div class="case-genre">Semi-Erotic Horror &middot; Frontier West</div>
+        <div class="case-rule"></div>
+        <p class="case-desc">A tightly constructed short built around a single brutal inversion &mdash; the predator becomes prey. BAD delivered a full production bible including treatment analysis across two competing versions with a clear thesis recommendation. Shot list architecture across 5 scenes and 34 shots locked and documented.</p>
+        <div class="case-deliverables">
+          <div class="case-deliverable">Dual-treatment analysis &amp; version recommendation</div>
+          <div class="case-deliverable">Complete production bible &mdash; 9 sections</div>
+          <div class="case-deliverable">Shot list architecture (34 shots / 5 scenes)</div>
+          <div class="case-deliverable">Tone, visual language &amp; production notes</div>
+          <div class="case-deliverable">Character breakdown &amp; scene outline</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-accent"></div>
+        <div class="case-card-top"><span class="case-format">Short Film &middot; Drama</span><span class="case-status">Binder Complete</span></div>
+        <h3 class="case-title">How to End an Argument</h3>
+        <div class="case-genre">Dramatic Short &middot; New Orleans</div>
+        <div class="case-rule"></div>
+        <p class="case-desc">Full master binder built on the BAD FRAME-FILM standard. Budget architecture flagged dual-license music clearance and stunt coordination costs before production planning began. Louisiana 25% tax credit path modeled into the line-item budget from the first draft.</p>
+        <div class="case-deliverables">
+          <div class="case-deliverable">Full investor pitch packet (P1&ndash;P8)</div>
+          <div class="case-deliverable">23-section production bible</div>
+          <div class="case-deliverable">Line-item budget: ~$44,500 hard costs</div>
+          <div class="case-deliverable">Louisiana tax credit path: ~$33,400 net</div>
+          <div class="case-deliverable">Music rights &amp; stunt coordination flags</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-accent"></div>
+        <div class="case-card-top"><span class="case-format">Stage Production &middot; Theater</span><span class="case-status">Binder Complete</span></div>
+        <h3 class="case-title">The Final Piece</h3>
+        <div class="case-genre">Live Theater &middot; New Orleans</div>
+        <div class="case-rule"></div>
+        <p class="case-desc">BAD&rsquo;s consulting framework applied to live theater &mdash; proof the methodology is format-agnostic. Full theater binder built on the BAD FRAME-THEATER standard: production governance, budget architecture, and strategic development documentation built for the realities of independent stage production.</p>
+        <div class="case-deliverables">
+          <div class="case-deliverable">Full theater production binder</div>
+          <div class="case-deliverable">BAD FRAME-THEATER standard applied</div>
+          <div class="case-deliverable">Budget architecture for live production</div>
+          <div class="case-deliverable">Production governance documentation</div>
+          <div class="case-deliverable">Strategic development package</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="audience">
   <div class="audience-left">
-    <div class="section-header"><span class="section-label">// 02 &mdash; Who We Serve</span></div>
+    <div class="section-header"><span class="section-label">// 04 &mdash; Who We Serve</span></div>
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,4rem);line-height:0.95;margin-bottom:2rem;color:var(--white);">The Right<br>Partners</h2>
     <p class="audience-body">We built BAD for the people the industry underserves &mdash; the independent filmmaker who refuses to wait for a studio&rsquo;s permission, the non-profit with a real story and a tight budget, the storytelling organization that knows what it needs but can&rsquo;t afford the overhead of a legacy consultant.</p>
     <ul class="audience-list">
@@ -376,120 +449,40 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="portfolio-inner">
-    <div class="section-header">
-      <span class="section-label">// 03 &mdash; The Work in Practice</span>
-      <div class="section-rule"></div>
-      <h2 class="section-title">Case Studies</h2>
-    </div>
-    <div class="portfolio-grid">
-
-      <div class="case-card">
-        <div class="case-accent"></div>
-        <div class="case-card-top">
-          <span class="case-format">Short Film &middot; Horror / Thriller</span>
-          <span class="case-status">Binder Complete</span>
-        </div>
-        <h3 class="case-title">The Butcher</h3>
-        <div class="case-genre">Psychological Horror &middot; New Orleans</div>
-        <div class="case-rule"></div>
-        <p class="case-desc">A full production package built from the ground up — script analysis identified structural load points and tonal inconsistencies before a single dollar moved. Budget architecture built to New Orleans production realities with Louisiana tax credit integration baked in from line one.</p>
-        <div class="case-deliverables">
-          <div class="case-deliverable">Script analysis &amp; structural diagnosis</div>
-          <div class="case-deliverable">Full investor pitch packet (P1&ndash;P8)</div>
-          <div class="case-deliverable">23-section production bible</div>
-          <div class="case-deliverable">New Orleans line-item budget w/ tax credit modeling</div>
-          <div class="case-deliverable">Standalone investor leave-behind</div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-accent"></div>
-        <div class="case-card-top">
-          <span class="case-format">Short Film &middot; Western Gothic</span>
-          <span class="case-status">Bible Complete</span>
-        </div>
-        <h3 class="case-title">BAIT</h3>
-        <div class="case-genre">Semi-Erotic Horror &middot; Frontier West</div>
-        <div class="case-rule"></div>
-        <p class="case-desc">A tightly constructed short built around a single brutal inversion &mdash; the predator becomes prey. BAD delivered a full production bible including treatment analysis across two competing versions, with a clear recommendation on which thesis served the film. Shot list architecture across 5 scenes and 34 shots locked and documented.</p>
-        <div class="case-deliverables">
-          <div class="case-deliverable">Dual-treatment analysis &amp; version recommendation</div>
-          <div class="case-deliverable">Complete production bible &mdash; 9 sections</div>
-          <div class="case-deliverable">Shot list architecture (34 shots / 5 scenes)</div>
-          <div class="case-deliverable">Tone, visual language &amp; production notes</div>
-          <div class="case-deliverable">Character breakdown &amp; scene outline</div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-accent"></div>
-        <div class="case-card-top">
-          <span class="case-format">Short Film &middot; Drama</span>
-          <span class="case-status">Binder Complete</span>
-        </div>
-        <h3 class="case-title">How to End an Argument</h3>
-        <div class="case-genre">Dramatic Short &middot; New Orleans</div>
-        <div class="case-rule"></div>
-        <p class="case-desc">Full master binder built on the BAD FRAME-FILM standard. Budget architecture identified two critical cost flags &mdash; dual-license music clearance and stunt coordination &mdash; before production planning began, saving significant rework downstream. Full Louisiana 25% tax credit path modeled into the line-item budget from the first draft.</p>
-        <div class="case-deliverables">
-          <div class="case-deliverable">Full investor pitch packet (P1&ndash;P8)</div>
-          <div class="case-deliverable">23-section production bible</div>
-          <div class="case-deliverable">Line-item budget: ~$44,500 hard costs</div>
-          <div class="case-deliverable">Louisiana tax credit path: ~$33,400 net</div>
-          <div class="case-deliverable">Music rights &amp; stunt coordination flags</div>
-        </div>
-      </div>
-
-      <div class="case-card">
-        <div class="case-accent"></div>
-        <div class="case-card-top">
-          <span class="case-format">Stage Production &middot; Theater</span>
-          <span class="case-status">Binder Complete</span>
-        </div>
-        <h3 class="case-title">The Final Piece</h3>
-        <div class="case-genre">Live Theater &middot; New Orleans</div>
-        <div class="case-rule"></div>
-        <p class="case-desc">BAD&rsquo;s consulting framework applied to live theater production &mdash; proof that the methodology is format-agnostic. A full theater binder built on the BAD FRAME-THEATER standard: production governance, budget architecture, and strategic development documentation built for the realities of independent stage production.</p>
-        <div class="case-deliverables">
-          <div class="case-deliverable">Full theater production binder</div>
-          <div class="case-deliverable">BAD FRAME-THEATER standard applied</div>
-          <div class="case-deliverable">Budget architecture for live production</div>
-          <div class="case-deliverable">Production governance documentation</div>
-          <div class="case-deliverable">Strategic development package</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section id="cta">
   <div class="cta-inner">
     <h2 class="cta-headline">Ready to Build<br>Something Real?</h2>
     <p class="cta-sub">Let&rsquo;s talk about your project. No obligation. No pitch deck. Just a real conversation.</p>
-    <a href="#" class="btn-dark" onclick="var e='BeautifulAnarchyDesigns'+'@'+'gmail.com';window.location='mailto:'+e;return false;">BeautifulAnarchyDesigns@gmail.com</a>
+    <a href="#" class="btn-dark" id="ctaBtn">BeautifulAnarchyDesigns@gmail.com</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-brand">Beautiful Anarchy Designs</div>
   <div class="footer-tagline">We are the beauty in chaos.</div>
-  <a href="#" class="footer-contact" onclick="var e='BeautifulAnarchyDesigns'+'@'+'gmail.com';window.location='mailto:'+e;return false;">BeautifulAnarchyDesigns@gmail.com</a>
+  <a href="#" class="footer-contact" id="footerBtn">BeautifulAnarchyDesigns@gmail.com</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+<script>
+  // Email links built at runtime so no crawler or CDN can intercept
+  (function(){
+    var e = String.fromCharCode(66,101,97,117,116,105,102,117,108,65,110,97,114,99,104,121,68,101,115,105,103,110,115,64,103,109,97,105,108,46,99,111,109);
+    var m = 'mail' + 'to:' + e;
+    document.getElementById('ctaBtn').href = m;
+    document.getElementById('footerBtn').href = m;
+    document.getElementById('bundleBtn').href = m + '?subject=Founding%20Client%20Bundle%20Inquiry';
+  })();
+
+  // Scroll animations
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry, i){
+      if(entry.isIntersecting){
+        setTimeout(function(){ entry.target.classList.add('visible'); }, i * 80);
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.proof-item, .service-card, .claim-pillar, .pricing-card, .bundle-row, .case-card').forEach(el => observer.observe(el));
+  document.querySelectorAll('.proof-item,.service-card,.claim-pillar,.pricing-card,.bundle-row,.case-card').forEach(function(el){ observer.observe(el); });
 </script>
 </body>
 </html>
