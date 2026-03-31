@@ -464,14 +464,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
 </footer>
 
 <script>
-  // Email links built at runtime so no crawler or CDN can intercept
-  (function(){
-    var e = String.fromCharCode(66,101,97,117,116,105,102,117,108,65,110,97,114,99,104,121,68,101,115,105,103,110,115,64,103,109,97,105,108,46,99,111,109);
-    var m = 'mail' + 'to:' + e;
-    document.getElementById('ctaBtn').href = m;
-    document.getElementById('footerBtn').href = m;
-    document.getElementById('bundleBtn').href = m + '?subject=Founding%20Client%20Bundle%20Inquiry';
-  })();
+  // Email display only
 
   // Scroll animations
   var observer = new IntersectionObserver(function(entries){
