@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Anarchy Designs — Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0a0a0a;--white:#f0ede6;--gold:#c9a84c;--gold-dim:#8a6f2e;--red:#8b1a1a;--mid:#1c1c1c;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Cormorant Garamond',Georgia,serif;cursor:crosshair;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.6;}
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;border-bottom:1px solid rgba(201,168,76,0.15);background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);}
+.logo-block{display:flex;flex-direction:column;line-height:1;}
+.logo-main{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:var(--gold);}
+.logo-sub{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(240,237,230,0.4);margin-top:2px;}
+nav{display:flex;gap:2.5rem;align-items:center;}
+nav a{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.55);text-decoration:none;transition:color 0.2s;}
+nav a:hover{color:var(--gold);}
+.nav-cta{border:1px solid var(--gold);padding:0.5rem 1.2rem;color:var(--gold)!important;}
+.nav-cta:hover{background:var(--gold);color:var(--black)!important;}
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px;position:relative;overflow:hidden;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 6rem 3rem;position:relative;z-index:2;}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;animation:fadeUp 0.8s ease both;}
+.hero-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,7vw,7.5rem);line-height:0.92;color:var(--white);animation:fadeUp 0.8s 0.1s ease both;}
+.hero-headline em{color:var(--gold);font-style:normal;display:block;}
+.hero-claim{margin-top:2.5rem;font-size:1.35rem;font-style:italic;font-weight:300;line-height:1.5;color:rgba(240,237,230,0.75);max-width:480px;border-left:2px solid var(--gold);padding-left:1.2rem;animation:fadeUp 0.8s 0.2s ease both;}
+.hero-claim strong{color:var(--white);font-style:normal;font-weight:600;}
+.hero-actions{margin-top:3rem;display:flex;gap:1.2rem;align-items:center;animation:fadeUp 0.8s 0.3s ease both;}
+.btn-primary{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;background:var(--gold);color:var(--black);padding:1rem 2.2rem;transition:background 0.2s,transform 0.15s;}
+.btn-primary:hover{background:var(--white);transform:translateY(-2px);}
+.btn-ghost{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;color:rgba(240,237,230,0.6);border-bottom:1px solid rgba(240,237,230,0.3);padding-bottom:2px;transition:color 0.2s,border-color 0.2s;}
+.btn-ghost:hover{color:var(--gold);border-color:var(--gold);}
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-graphic{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%);}
+.hero-badge{position:relative;z-index:2;width:280px;height:280px;border:1px solid rgba(201,168,76,0.3);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:fadeUp 0.8s 0.4s ease both,spin 40s linear infinite;}
+.hero-badge::before{content:'';position:absolute;inset:12px;border:1px solid rgba(201,168,76,0.15);border-radius:50%;}
+.badge-inner{animation:spinReverse 40s linear infinite;display:flex;flex-direction:column;align-items:center;}
+.badge-big{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;color:var(--gold);line-height:1;}
+.badge-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,237,230,0.4);margin-top:4px;}
+.badge-rule{width:40px;height:1px;background:var(--gold-dim);margin:0.6rem 0;}
+.hero-ticker{position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(201,168,76,0.2);padding:0.7rem 0;background:rgba(10,10,10,0.6);overflow:hidden;z-index:10;}
+.ticker-track{display:flex;gap:4rem;animation:ticker 30s linear infinite;white-space:nowrap;width:max-content;}
+.ticker-item{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-dim);}
+.ticker-sep{color:var(--red);margin:0 1rem;}
+#proof{padding:2.5rem 3rem;display:flex;border-bottom:1px solid rgba(201,168,76,0.1);}
+.proof-item{flex:1;padding:0 2rem;border-right:1px solid rgba(201,168,76,0.12);text-align:center;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.proof-item:last-child{border-right:none;}
+.proof-item.visible{opacity:1;transform:none;}
+.proof-num{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--gold);line-height:1;}
+.proof-label{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,237,230,0.4);margin-top:0.3rem;}
+#services{padding:8rem 3rem;max-width:1400px;margin:0 auto;}
+.section-header{display:flex;align-items:baseline;gap:2rem;margin-bottom:5rem;}
+.section-label{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5.5rem);line-height:0.9;color:var(--white);}
+.section-rule{flex:1;height:1px;background:rgba(201,168,76,0.2);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(201,168,76,0.15);}
+.service-card{padding:3.5rem 2.5rem;border-right:1px solid rgba(201,168,76,0.12);position:relative;overflow:hidden;opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.service-card:last-child{border-right:none;}
+.service-card.visible{opacity:1;transform:none;}
+.service-card::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+.service-card:hover::before{transform:scaleX(1);}
+.service-num{font-family:'Bebas Neue',sans-serif;font-size:5rem;color:rgba(201,168,76,0.08);line-height:1;position:absolute;top:1rem;right:1.5rem;}
+.service-icon{width:42px;height:42px;border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;margin-bottom:2rem;}
+.service-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5;}
+.service-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:1.2rem;line-height:1.1;}
+.service-body{font-size:1.05rem;font-weight:300;line-height:1.7;color:rgba(240,237,230,0.6);font-style:italic;}
+.service-detail{margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,0.1);}
+.service-detail-item{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;color:rgba(240,237,230,0.4);padding:0.4rem 0;display:flex;align-items:center;gap:0.7rem;}
+.service-detail-item::before{content:'→';color:var(--gold);}
+#claim{background:var(--mid);padding:8rem 3rem;position:relative;overflow:hidden;border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);}
+#claim::before{content:'BAD';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:30vw;color:rgba(201,168,76,0.03);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;line-height:1;}
+.claim-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2;}
+.claim-eyebrow{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+.claim-statement{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.8rem);font-style:italic;font-weight:300;line-height:1.3;color:var(--white);}
+.claim-statement strong{font-style:normal;font-weight:600;color:var(--gold);}
+.claim-pillars{display:flex;justify-content:center;gap:4rem;margin-top:4rem;}
+.claim-pillar{text-align:center;opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.claim-pillar.visible{opacity:1;transform:none;}
+.pillar-word{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--white);}
+.pillar-line{width:2px;height:30px;background:var(--gold);margin:0.5rem auto;}
+.pillar-sub{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.35);}
+#pricing{padding:8rem 3rem;background:var(--black);border-bottom:1px solid rgba(201,168,76,0.1);}
+.pricing-inner{max-width:1400px;margin:0 auto;}
+.pricing-badge{display:inline-flex;align-items:center;gap:0.7rem;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);padding:0.5rem 1.2rem;margin-bottom:3rem;}
+.pricing-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
+.pricing-badge-text{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);}
+.pricing-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,4.5rem);line-height:0.95;color:var(--white);margin-bottom:0.8rem;}
+.pricing-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(240,237,230,0.5);margin-bottom:4rem;max-width:560px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.12);margin-bottom:1px;}
+.pricing-card{background:var(--black);padding:3rem 2.5rem;opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease,background 0.3s;}
+.pricing-card:hover{background:rgba(201,168,76,0.04);}
+.pricing-card.visible{opacity:1;transform:none;}
+.pricing-card-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.pricing-card-name{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--white);margin-bottom:1.5rem;line-height:1.1;}
+.pricing-range{display:flex;align-items:baseline;gap:0.4rem;margin-bottom:0.4rem;flex-wrap:wrap;}
+.pricing-from{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,230,0.3);}
+.pricing-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);line-height:1;}
+.pricing-to{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(240,237,230,0.3);align-self:center;}
+.pricing-num-end{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:rgba(201,168,76,0.4);line-height:1;}
+.pricing-note{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.15em;color:rgba(240,237,230,0.25);margin-bottom:2rem;text-transform:uppercase;}
+.pricing-divider{height:1px;background:rgba(201,168,76,0.1);margin-bottom:1.5rem;}
+.pricing-includes{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;line-height:1.6;color:rgba(240,237,230,0.5);}
+.bundle-row{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.25);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;margin-top:1px;opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.bundle-row.visible{opacity:1;transform:none;}
+.bundle-left{flex:1;}
+.bundle-tag{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.bundle-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);}
+.bundle-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(240,237,230,0.5);margin-top:0.4rem;max-width:420px;}
+.bundle-price-block{text-align:right;flex-shrink:0;}
+.bundle-price{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--gold);line-height:1;}
+.bundle-savings{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,230,0.3);margin-top:0.3rem;}
+.bundle-cta{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);color:var(--gold);padding:0.9rem 2rem;transition:background 0.2s,color 0.2s;flex-shrink:0;}
+.bundle-cta:hover{background:var(--gold);color:var(--black);}
+.pricing-disclaimer{margin-top:2.5rem;font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.2em;color:rgba(240,237,230,0.2);text-transform:uppercase;line-height:1.8;}
+#audience{padding:8rem 3rem;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
+.audience-body{font-size:1.25rem;font-weight:300;font-style:italic;line-height:1.8;color:rgba(240,237,230,0.65);}
+.audience-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem;}
+.audience-list li{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,230,0.5);display:flex;align-items:center;gap:1rem;}
+.audience-list li::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0;}
+.tagline-block{border:1px solid rgba(201,168,76,0.2);padding:3.5rem;position:relative;}
+.tagline-block::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:8rem;color:var(--gold);opacity:0.15;position:absolute;top:-1rem;left:1rem;line-height:1;}
+.tagline-quote{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;font-weight:300;line-height:1.4;color:var(--white);position:relative;z-index:1;}
+.tagline-attr{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-top:1.5rem;}
+.corner-bracket{position:absolute;width:20px;height:20px;border-color:var(--gold);border-style:solid;opacity:0.4;}
+.corner-bracket.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.corner-bracket.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
+.corner-bracket.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}
+.corner-bracket.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+#cta{background:var(--gold);padding:7rem 3rem;text-align:center;position:relative;overflow:hidden;}
+#cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0px,transparent 8px,rgba(0,0,0,0.04) 8px,rgba(0,0,0,0.04) 9px);}
+.cta-inner{position:relative;z-index:1;}
+.cta-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,6rem);color:var(--black);line-height:0.95;margin-bottom:1.5rem;}
+.cta-sub{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:rgba(10,10,10,0.65);margin-bottom:3rem;}
+.btn-dark{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;background:var(--black);color:var(--gold);padding:1.2rem 3rem;display:inline-block;transition:background 0.2s,transform 0.15s;}
+.btn-dark:hover{background:rgba(10,10,10,0.85);transform:translateY(-2px);}
+footer{padding:3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(201,168,76,0.1);}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.15em;color:var(--gold);}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:rgba(240,237,230,0.3);}
+.footer-contact{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;color:rgba(240,237,230,0.35);text-decoration:none;transition:color 0.2s;}
+.footer-contact:hover{color:var(--gold);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes spinReverse{from{transform:rotate(0deg);}to{transform:rotate(-360deg);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+@media(max-width:900px){
+  header{padding:1rem 1.5rem;}
+  nav a:not(.nav-cta){display:none;}
+  #hero{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .hero-left{padding:5rem 1.5rem 4rem;}
+  #proof{flex-wrap:wrap;}
+  .proof-item{border-right:none;border-bottom:1px solid rgba(201,168,76,0.1);padding:1rem;width:50%;}
+  #services{padding:5rem 1.5rem;}
+  .services-grid{grid-template-columns:1fr;}
+  .service-card{border-right:none;border-bottom:1px solid rgba(201,168,76,0.12);}
+  #pricing{padding:5rem 1.5rem;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .bundle-row{flex-direction:column;align-items:flex-start;padding:2rem;}
+  .bundle-price-block{text-align:left;}
+  #audience{grid-template-columns:1fr;gap:4rem;padding:5rem 1.5rem;}
+  .claim-pillars{flex-direction:column;gap:2rem;}
+  footer{flex-direction:column;gap:1rem;text-align:center;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-block">
+    <span class="logo-main">Beautiful Anarchy Designs</span>
+    <span class="logo-sub">We are the beauty in chaos</span>
+  </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#audience">Who We Serve</a>
+    <a href="#cta" class="nav-cta">Engage BAD</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">New Orleans &middot; Film &amp; Media Consulting</p>
+    <h1 class="hero-headline">Better.<br>Faster.<br><em>Cheaper.</em></h1>
+    <p class="hero-claim"><strong>We will out-analyze, out-architect, and out-execute anyone else you can hire</strong> &mdash; at a fraction of the cost and in half the time. That&rsquo;s not a pitch. That&rsquo;s our operating standard.</p>
+    <div class="hero-actions">
+      <a href="#cta" class="btn-primary">Start a Conversation</a>
+      <a href="#services" class="btn-ghost">See What We Do</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-graphic"></div>
+    <div class="hero-badge">
+      <div class="badge-inner">
+        <span class="badge-big">BAD</span>
+        <div class="badge-rule"></div>
+        <span class="badge-label">Est. New Orleans</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">Script Analysis <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Budget Architecture <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Strategic Development <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Independent Production <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Non-Profit Media <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Funding Positioning <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Distribution Strategy <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Script Analysis <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Budget Architecture <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Strategic Development <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Independent Production <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Non-Profit Media <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Funding Positioning <span class="ticker-sep">&bull;</span></span>
+      <span class="ticker-item">Distribution Strategy <span class="ticker-sep">&bull;</span></span>
+    </div>
+  </div>
+</section>
+
+<div id="proof">
+  <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">Independent &mdash; No Studio Politics</div></div>
+  <div class="proof-item"><div class="proof-num">2&times;</div><div class="proof-label">Faster Than Industry Standard Turnaround</div></div>
+  <div class="proof-item"><div class="proof-num">NPC</div><div class="proof-label">No Padding. No Corporate Overhead.</div></div>
+  <div class="proof-item"><div class="proof-num">001</div><div class="proof-label">Boutique Precision &mdash; Every Project Matters</div></div>
+</div>
+
+<section id="services">
+  <div class="section-header">
+    <span class="section-label">// 01 &mdash; What We Do</span>
+    <div class="section-rule"></div>
+    <h2 class="section-title">The Work</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3 class="service-name">Script Analysis</h3>
+      <p class="service-body">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</p>
+      <div class="service-detail">
+        <div class="service-detail-item">Structural narrative diagnosis</div>
+        <div class="service-detail-item">Production feasibility flags before you spend a dollar</div>
+        <div class="service-detail-item">Budget impact assessment per scene</div>
+        <div class="service-detail-item">Clear, actionable revision roadmap</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 12h6"/></svg></div>
+      <h3 class="service-name">Budget Architecture</h3>
+      <p class="service-body">Built for how independent and non-profit productions actually work &mdash; not the Hollywood model. Real numbers. Real constraints. Real paths to production.</p>
+      <div class="service-detail">
+        <div class="service-detail-item">Line-item budgets scaled to your reality</div>
+        <div class="service-detail-item">Non-profit &amp; grant-aligned budget structuring</div>
+        <div class="service-detail-item">Cost optimization without creative compromise</div>
+        <div class="service-detail-item">Investor-ready financial packaging</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <h3 class="service-name">Strategic Development</h3>
+      <p class="service-body">Your story deserves to compete. We position your project for funding, distribution, and the institutional partnerships that turn vision into release.</p>
+      <div class="service-detail">
+        <div class="service-detail-item">Funding strategy &amp; grant positioning</div>
+        <div class="service-detail-item">Distribution pathway planning</div>
+        <div class="service-detail-item">Institutional partnership outreach frameworks</div>
+        <div class="service-detail-item">Pitch deck &amp; development documentation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="claim">
+  <div class="claim-inner">
+    <p class="claim-eyebrow">// The Standard We Hold Ourselves To</p>
+    <p class="claim-statement">We will do it <strong>better</strong>, we will do it <strong>faster</strong>, and we will do it more <strong>cost efficiently</strong> than anyone else you can bring into the room.</p>
+    <div class="claim-pillars">
+      <div class="claim-pillar"><div class="pillar-word">Better</div><div class="pillar-line"></div><div class="pillar-sub">Deep expertise<br>across every layer</div></div>
+      <div class="claim-pillar"><div class="pillar-word">Faster</div><div class="pillar-line"></div><div class="pillar-sub">No bureaucracy.<br>No delay.</div></div>
+      <div class="claim-pillar"><div class="pillar-word">Cheaper</div><div class="pillar-line"></div><div class="pillar-sub">Boutique quality<br>without the overhead</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-badge"><div class="pricing-badge-dot"></div><span class="pricing-badge-text">Now Accepting Founding Clients</span></div>
+    <h2 class="pricing-headline">Founding Client<br>Rates</h2>
+    <p class="pricing-sub">Real numbers. No discovery call required to know if we&rsquo;re in your range. These rates will not be offered again after the first 3&ndash;5 engagements.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-card-label">// Service 01</div>
+        <div class="pricing-card-name">Script Analysis</div>
+        <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$350</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$500</span></div>
+        <div class="pricing-note">Founding client rate &middot; Limited availability</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-includes">Structural diagnosis, production feasibility flags, budget impact per scene, and a clear revision roadmap &mdash; delivered fast.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-card-label">// Service 02</div>
+        <div class="pricing-card-name">Budget Architecture</div>
+        <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$500</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$750</span></div>
+        <div class="pricing-note">Founding client rate &middot; Limited availability</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-includes">Line-item budgets built for your actual reality. Non-profit and grant-aligned structuring. Investor-ready packaging included.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-card-label">// Service 03</div>
+        <div class="pricing-card-name">Strategic Development</div>
+        <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$1,200</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$1,500</span></div>
+        <div class="pricing-note">Founding client rate &middot; Limited availability</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-includes">Funding strategy, distribution pathway planning, pitch documentation, and institutional outreach framework &mdash; full stack.</div>
+      </div>
+    </div>
+    <div class="bundle-row">
+      <div class="bundle-left">
+        <div class="bundle-tag">// Full Engagement Bundle</div>
+        <div class="bundle-name">All Three Services</div>
+        <div class="bundle-desc">The complete BAD experience in one engagement. Script analysis, budget architecture, and strategic development &mdash; start to finish.</div>
+      </div>
+      <div class="bundle-price-block">
+        <div class="bundle-price">$1,800</div>
+        <div class="bundle-savings">Saves you ~$500 vs. individual rates</div>
+      </div>
+      <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="bundle-cta">Claim This Rate</a>
+    </div>
+    <div class="pricing-disclaimer">Founding client rates are time-limited and will not be offered again after the first 3&ndash;5 engagements. &nbsp;&middot;&nbsp; Direct access to principal on every project. &nbsp;&middot;&nbsp; Faster turnaround than industry standard. &nbsp;&middot;&nbsp; Retainer options available after first engagement.</div>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="audience-left">
+    <div class="section-header"><span class="section-label">// 02 &mdash; Who We Serve</span></div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,4rem);line-height:0.95;margin-bottom:2rem;color:var(--white);">The Right<br>Partners</h2>
+    <p class="audience-body">We built BAD for the people the industry underserves &mdash; the independent filmmaker who refuses to wait for a studio&rsquo;s permission, the non-profit with a real story and a tight budget, the storytelling organization that knows what it needs but can&rsquo;t afford the overhead of a legacy consultant.</p>
+    <ul class="audience-list">
+      <li>Independent filmmakers &amp; production companies</li>
+      <li>Non-profit media organizations</li>
+      <li>Film education &amp; access programs</li>
+      <li>Storytelling initiatives seeking funding</li>
+      <li>Projects moving from development to production</li>
+    </ul>
+  </div>
+  <div class="audience-right">
+    <div class="tagline-block">
+      <div class="corner-bracket tl"></div><div class="corner-bracket tr"></div><div class="corner-bracket bl"></div><div class="corner-bracket br"></div>
+      <p class="tagline-quote">We are not a Hollywood consultancy that scaled down. We are an independent operation that built up &mdash; and that distinction is everything.</p>
+      <p class="tagline-attr">&mdash; Beautiful Anarchy Designs &middot; New Orleans</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="cta-inner">
+    <h2 class="cta-headline">Ready to Build<br>Something Real?</h2>
+    <p class="cta-sub">Let&rsquo;s talk about your project. No obligation. No pitch deck. Just a real conversation.</p>
+    <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="btn-dark">BeautifulAnarchyDesigns@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Beautiful Anarchy Designs</div>
+  <div class="footer-tagline">We are the beauty in chaos.</div>
+  <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="footer-contact">BeautifulAnarchyDesigns@gmail.com</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.proof-item, .service-card, .claim-pillar, .pricing-card, .bundle-row').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
