@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beautiful Anarchy Designs &mdash; Consulting</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="index.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--black:#0a0a0a;--white:#f0ede6;--gold:#c9a84c;--gold-dim:#8a6f2e;--red:#8b1a1a;--mid:#1c1c1c;}
@@ -160,11 +159,62 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:rgba(240,237,230,0.3);}
 .footer-contact{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;color:rgba(240,237,230,0.35);text-decoration:none;transition:color 0.2s;}
 .footer-contact:hover{color:var(--gold);}
+.footer-links{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;justify-content:flex-end;}
+.footer-social{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;color:rgba(240,237,230,0.35);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+.footer-social:hover{color:var(--gold);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 @keyframes spinReverse{from{transform:rotate(0deg);}to{transform:rotate(-360deg);}}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+/* Comparison section moved inline for reliability */
+#comparison{padding:8rem 3rem;background:var(--black);border-bottom:1px solid rgba(201,168,76,0.1);}
+.comparison-inner{max-width:1400px;margin:0 auto;}
+.comp-intro{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;font-weight:300;color:rgba(240,237,230,0.5);max-width:680px;margin-bottom:3.5rem;line-height:1.7;}
+.comp-tabs{display:flex;border-bottom:1px solid rgba(201,168,76,0.2);margin-bottom:4rem;overflow-x:auto;}
+.comp-tab{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);padding:1rem 2rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;background:none;white-space:nowrap;}
+.comp-tab:hover{color:rgba(240,237,230,0.65);}
+.comp-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.comp-panel{display:none;}
+.comp-panel.active{display:block;}
+.comp-product-header{margin-bottom:2.5rem;}
+.comp-product-eyebrow{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.comp-product-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);color:var(--white);line-height:1;margin-bottom:0.7rem;}
+.comp-product-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(240,237,230,0.45);max-width:580px;line-height:1.6;}
+.comp-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.12);margin-bottom:1.5rem;}
+.comp-col{background:var(--black);padding:2.5rem 2rem;min-width:0;}
+.comp-col-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(201,168,76,0.12);}
+.comp-col-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;}
+.comp-col-label.ind{color:rgba(180,80,80,0.85);}
+.comp-col-label.bad{color:var(--gold);}
+.comp-col-context{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.15);}
+.comp-table-wrap{overflow-x:auto;}
+.comp-table{width:100%;border-collapse:collapse;table-layout:fixed;}
+.comp-table th{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,237,230,0.22);text-align:left;padding:0.45rem 0.35rem;border-bottom:1px solid rgba(201,168,76,0.08);}
+.comp-table td{font-family:'Cormorant Garamond',serif;font-size:0.88rem;color:rgba(240,237,230,0.6);padding:0.5rem 0.35rem;border-bottom:1px solid rgba(255,255,255,0.025);vertical-align:top;line-height:1.4;word-break:normal;overflow-wrap:anywhere;}
+.comp-table tr:last-child td{border-bottom:none;}
+.comp-table tr.comp-total td{color:rgba(220,90,90,0.9);font-family:'DM Mono',monospace;letter-spacing:0.08em;font-size:0.46rem;text-transform:uppercase;border-top:1px solid rgba(180,80,80,0.2);border-bottom:none;padding-top:0.8rem;}
+.comp-table tr.comp-total-bad td{color:rgba(100,200,105,0.85);font-family:'DM Mono',monospace;letter-spacing:0.08em;font-size:0.46rem;text-transform:uppercase;border-top:1px solid rgba(76,175,80,0.2);border-bottom:none;padding-top:0.8rem;}
+.comp-savings{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(76,175,80,0.15);border-left:3px solid rgba(76,175,80,0.6);margin-bottom:4rem;}
+.savings-cell{background:rgba(10,20,10,0.8);padding:1.5rem 2rem;}
+.savings-cell-label{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(76,175,80,0.6);margin-bottom:0.4rem;}
+.savings-cell-value{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:rgba(110,210,115,0.9);line-height:1;margin-bottom:0.2rem;}
+.savings-cell-sub{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.2);}
+.comp-aggregate{border-top:1px solid rgba(201,168,76,0.15);padding-top:3rem;margin-top:1rem;}
+.comp-agg-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:rgba(240,237,230,0.3);margin-bottom:1.5rem;text-align:center;}
+.comp-agg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.12);}
+.agg-cell{background:var(--black);padding:2rem;text-align:center;}
+.agg-label{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.25);margin-bottom:0.6rem;}
+.agg-value{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;line-height:1;margin-bottom:0.3rem;}
+.agg-value.v-red{color:rgba(207,112,112,0.9);}
+.agg-value.v-green{color:rgba(110,207,115,0.9);}
+.agg-value.v-gold{color:var(--gold);}
+.agg-sub{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.18);}
+.footer-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
+.footer-social{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.2em;color:rgba(240,237,230,0.35);text-decoration:none;transition:color 0.2s;}
+.footer-social:hover{color:var(--gold);}
+
 @media(max-width:900px){
   header{padding:1rem 1.5rem;}
   nav a:not(.nav-cta){display:none;}
@@ -184,8 +234,16 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   .portfolio-grid{grid-template-columns:1fr;}
   #audience{grid-template-columns:1fr;gap:4rem;padding:5rem 1.5rem;}
   .claim-pillars{flex-direction:column;gap:2rem;}
+  #comparison{padding:5rem 1.5rem;}
+  .comp-split{grid-template-columns:1fr;}
+  .comp-col{padding:2rem 1.5rem;overflow-x:auto;}
+  .comp-table{min-width:420px;}
+  .comp-savings{grid-template-columns:1fr;}
+  .comp-agg-grid{grid-template-columns:1fr 1fr;}
   footer{flex-direction:column;gap:1rem;text-align:center;}
+  .footer-links{justify-content:center;}
 }
+
 </style>
 </head>
 <body>
@@ -313,16 +371,16 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     <div class="comp-panel active" id="p01">
       <div class="comp-product-header"><div class="comp-product-eyebrow">Product 01</div><div class="comp-product-title">Script Analysis</div><div class="comp-product-desc">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</div></div>
       <div class="comp-split">
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Development Executive</td><td>$800/day</td><td>5 days</td><td>$4,000</td></tr><tr><td>Story Editor</td><td>$1,500 flat</td><td>10&ndash;14 days</td><td>$1,500</td></tr><tr><td>Script Coverage Reader</td><td>$400 flat</td><td>2 days</td><td>$400</td></tr><tr><td>Script Consultant</td><td>$3,500 flat</td><td>5&ndash;7 days</td><td>$3,500</td></tr><tr><td>Line Producer (feasibility)</td><td>$600/day</td><td>2 days</td><td>$1,200</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>4 hours</td><td>$1,400</td></tr><tr><td>Development Assistant</td><td>$25/hr</td><td>15 hours</td><td>$375</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>3&ndash;6 Weeks</td><td>$12,375</td></tr></tbody></table></div>
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Narrative Diagnosis</td><td>Proprietary analysis engine maps story architecture, character logic, and structural integrity in one comprehensive pass</td><td>Day 1&ndash;2</td></tr><tr><td>Production Feasibility</td><td>Adversarial scenario testing stress-tests every scene flag for exposure. Revisions sequenced by cost impact</td><td>Day 2&ndash;3</td></tr><tr><td>Budget Impact / Scene</td><td>Real cost modeling per scene flag. Every revision note carries a dollar-weight for intelligent triage</td><td>Day 3&ndash;4</td></tr><tr><td>Revision Roadmap</td><td>Clear, prioritized action document sealed under BAD quality governance before delivery</td><td>Day 4&ndash;5</td></tr><tr><td>Governance &amp; QA</td><td>Multi-stage verification. Full reasoning chain logged.</td><td>Day 5</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Single operator. Fully governed.</td><td>5&ndash;7 Days</td></tr></tbody></table></div>
+        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Development Executive</td><td>$800/day</td><td>5 days</td><td>$4,000</td></tr><tr><td>Story Editor</td><td>$1,500 flat</td><td>10&ndash;14 days</td><td>$1,500</td></tr><tr><td>Script Coverage Reader</td><td>$400 flat</td><td>2 days</td><td>$400</td></tr><tr><td>Script Consultant</td><td>$3,500 flat</td><td>5&ndash;7 days</td><td>$3,500</td></tr><tr><td>Line Producer (feasibility)</td><td>$600/day</td><td>2 days</td><td>$1,200</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>4 hours</td><td>$1,400</td></tr><tr><td>Development Assistant</td><td>$25/hr</td><td>15 hours</td><td>$375</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>3&ndash;6 Weeks</td><td>$12,375</td></tr></tbody></table></div></div>
+        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><div class="comp-table-wrap"><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Narrative Diagnosis</td><td>Proprietary analysis engine maps story architecture, character logic, and structural integrity in one comprehensive pass</td><td>Day 1&ndash;2</td></tr><tr><td>Production Feasibility</td><td>Adversarial scenario testing stress-tests every scene flag for exposure. Revisions sequenced by cost impact</td><td>Day 2&ndash;3</td></tr><tr><td>Budget Impact / Scene</td><td>Real cost modeling per scene flag. Every revision note carries a dollar-weight for intelligent triage</td><td>Day 3&ndash;4</td></tr><tr><td>Revision Roadmap</td><td>Clear, prioritized action document sealed under BAD quality governance before delivery</td><td>Day 4&ndash;5</td></tr><tr><td>Governance &amp; QA</td><td>Multi-stage verification. Full reasoning chain logged.</td><td>Day 5</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Single operator. Fully governed.</td><td>5&ndash;7 Days</td></tr></tbody></table></div></div>
       </div>
       <div class="comp-savings"><div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$8,875&ndash;$10,375</div><div class="savings-cell-sub">vs. full industry staffing model</div></div><div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">84&ndash;90%</div><div class="savings-cell-sub">budget reduction</div></div><div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">2&ndash;4 Weeks</div><div class="savings-cell-sub">returned to production</div></div></div>
     </div>
     <div class="comp-panel" id="p02">
       <div class="comp-product-header"><div class="comp-product-eyebrow">Product 02</div><div class="comp-product-title">Budget Architecture</div><div class="comp-product-desc">Built for how independent and non-profit productions actually work &mdash; not the Hollywood model. Real numbers. Real constraints. Real paths to production.</div></div>
       <div class="comp-split">
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Line Producer</td><td>$1,200/day</td><td>10 days</td><td>$12,000</td></tr><tr><td>Production Accountant</td><td>$800/day</td><td>8 days</td><td>$6,400</td></tr><tr><td>UPM</td><td>$1,000/day</td><td>5 days</td><td>$5,000</td></tr><tr><td>Dept. Head Consults &times;5</td><td>$500/dept</td><td>1 day ea.</td><td>$2,500</td></tr><tr><td>Payroll Service &amp; Software</td><td>Flat fee</td><td>Ongoing</td><td>$1,500</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>6 hours</td><td>$2,100</td></tr><tr><td>Grant Writer (non-profit)</td><td>$7,500 flat</td><td>3&ndash;4 wks</td><td>$7,500</td></tr><tr><td>Investor Package Designer</td><td>$4,500 flat</td><td>2 weeks</td><td>$4,500</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>6&ndash;10 Weeks</td><td>$41,500</td></tr></tbody></table></div>
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Line-Item Budget</td><td>Built from first principles for indie/non-profit reality. Scaled to your actual resource environment &mdash; not studio-rate placeholders</td><td>Day 1&ndash;3</td></tr><tr><td>Grant Alignment</td><td>Grant logic built in from the start. Budget maps to funder reporting categories &mdash; no rebuild needed for submission</td><td>Day 2&ndash;4</td></tr><tr><td>Cost Optimization</td><td>Adversarial cost analysis finds every exposure. Cut scenarios stress-tested without creative compromise</td><td>Day 3&ndash;5</td></tr><tr><td>Investor Packaging</td><td>Investor-ready financial documentation is a native output of the same build. No separate designer engagement</td><td>Day 5&ndash;7</td></tr><tr><td>Governance &amp; QA</td><td>All cost assumptions and judgment calls logged with full audit trail</td><td>Day 7</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</td><td>7&ndash;10 Days</td></tr></tbody></table></div>
+        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Line Producer</td><td>$1,200/day</td><td>10 days</td><td>$12,000</td></tr><tr><td>Production Accountant</td><td>$800/day</td><td>8 days</td><td>$6,400</td></tr><tr><td>UPM</td><td>$1,000/day</td><td>5 days</td><td>$5,000</td></tr><tr><td>Dept. Head Consults &times;5</td><td>$500/dept</td><td>1 day ea.</td><td>$2,500</td></tr><tr><td>Payroll Service &amp; Software</td><td>Flat fee</td><td>Ongoing</td><td>$1,500</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>6 hours</td><td>$2,100</td></tr><tr><td>Grant Writer (non-profit)</td><td>$7,500 flat</td><td>3&ndash;4 wks</td><td>$7,500</td></tr><tr><td>Investor Package Designer</td><td>$4,500 flat</td><td>2 weeks</td><td>$4,500</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>6&ndash;10 Weeks</td><td>$41,500</td></tr></tbody></table></div></div>
+        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><div class="comp-table-wrap"><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Line-Item Budget</td><td>Built from first principles for indie/non-profit reality. Scaled to your actual resource environment &mdash; not studio-rate placeholders</td><td>Day 1&ndash;3</td></tr><tr><td>Grant Alignment</td><td>Grant logic built in from the start. Budget maps to funder reporting categories &mdash; no rebuild needed for submission</td><td>Day 2&ndash;4</td></tr><tr><td>Cost Optimization</td><td>Adversarial cost analysis finds every exposure. Cut scenarios stress-tested without creative compromise</td><td>Day 3&ndash;5</td></tr><tr><td>Investor Packaging</td><td>Investor-ready financial documentation is a native output of the same build. No separate designer engagement</td><td>Day 5&ndash;7</td></tr><tr><td>Governance &amp; QA</td><td>All cost assumptions and judgment calls logged with full audit trail</td><td>Day 7</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</td><td>7&ndash;10 Days</td></tr></tbody></table></div></div>
       </div>
       <div class="comp-savings"><div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$35,500&ndash;$41,000</div><div class="savings-cell-sub">vs. full industry staffing model</div></div><div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">88&ndash;99%</div><div class="savings-cell-sub">budget reduction</div></div><div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">4&ndash;8 Weeks</div><div class="savings-cell-sub">returned to production</div></div></div>
     </div>
@@ -330,7 +388,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
       <div class="comp-product-header"><div class="comp-product-eyebrow">Product 03</div><div class="comp-product-title">Strategic Development</div><div class="comp-product-desc">Your story deserves to compete. We position your project for funding, distribution, and the institutional partnerships that turn vision into release.</div></div>
       <div class="comp-split">
         <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Development Executive</td><td>$800/day</td><td>15 days</td><td>$12,000</td></tr><tr><td>Producer&rsquo;s Rep</td><td>10&ndash;15%</td><td>Ongoing</td><td>$10,000*</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>20 hours</td><td>$7,000</td></tr><tr><td>Grant Writer</td><td>$7,500 flat</td><td>3&ndash;4 wks</td><td>$7,500</td></tr><tr><td>PR / Marketing Consult</td><td>$4,000/mo</td><td>2&ndash;3 mos</td><td>$9,000</td></tr><tr><td>Distribution Consultant</td><td>$10,000 flat</td><td>4&ndash;6 wks</td><td>$10,000</td></tr><tr><td>Festival Strategist</td><td>$3,750 flat</td><td>2&ndash;4 wks</td><td>$3,750</td></tr><tr><td>Pitch Deck Designer</td><td>$5,000 flat</td><td>2&ndash;3 wks</td><td>$5,000</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>4&ndash;6 Months</td><td>$64,250</td></tr></tbody></table><div style="font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:rgba(240,237,230,0.2);margin-top:0.6rem;">* Estimated on $150K deal</div></div>
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Funding Strategy</td><td>Full funding landscape mapped. Applications positioned against project profile and funder priorities in one integrated document</td><td>Day 1&ndash;5</td></tr><tr><td>Distribution Planning</td><td>Festival windows, streaming, institutional placement, and licensing mapped against the funding timeline</td><td>Day 3&ndash;8</td></tr><tr><td>Partnership Frameworks</td><td>Targeted outreach architecture built. Partners identified, tiered, and framed with project-specific value propositions</td><td>Day 5&ndash;10</td></tr><tr><td>Pitch Deck &amp; Docs</td><td>Complete pitch deck and development documentation as a native deliverable &mdash; same operator, same build, no agency handoff</td><td>Day 8&ndash;14</td></tr><tr><td>Governance &amp; QA</td><td>All positioning assumptions stress-tested. Final package cleared. Every decision logged.</td><td>Day 12&ndash;14</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; One build. One operator. No siloed consultants.</td><td>2&ndash;3 Weeks</td></tr></tbody></table></div>
+        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Funding Strategy</td><td>Full funding landscape mapped. Applications positioned against project profile and funder priorities in one integrated document</td><td>Day 1&ndash;5</td></tr><tr><td>Distribution Planning</td><td>Festival windows, streaming, institutional placement, and licensing mapped against the funding timeline</td><td>Day 3&ndash;8</td></tr><tr><td>Partnership Frameworks</td><td>Targeted outreach architecture built. Partners identified, tiered, and framed with project-specific value propositions</td><td>Day 5&ndash;10</td></tr><tr><td>Pitch Deck &amp; Docs</td><td>Complete pitch deck and development documentation as a native deliverable &mdash; same operator, same build, no agency handoff</td><td>Day 8&ndash;14</td></tr><tr><td>Governance &amp; QA</td><td>All positioning assumptions stress-tested. Final package cleared. Every decision logged.</td><td>Day 12&ndash;14</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; One build. One operator. No siloed consultants.</td><td>2&ndash;3 Weeks</td></tr></tbody></table></div></div>
       </div>
       <div class="comp-savings"><div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$55,750&ndash;$63,050</div><div class="savings-cell-sub">vs. full industry staffing model</div></div><div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">87&ndash;98%</div><div class="savings-cell-sub">budget reduction</div></div><div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">3&ndash;5 Months</div><div class="savings-cell-sub">returned to production</div></div></div>
     </div>
@@ -394,7 +452,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
         <div class="bundle-price">$1,800</div>
         <div class="bundle-savings">Saves you ~$500 vs. individual rates</div>
       </div>
-      <a href="/cdn-cgi/l/email-protection#91d3f4f0e4e5f8f7e4fdd0fff0e3f2f9e8d5f4e2f8f6ffe2d1f6fcf0f8fdbff2fefc" class="bundle-cta">Claim This Rate</a>
+      <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="bundle-cta">Claim This Rate</a>
     </div>
     <div class="pricing-disclaimer">Founding client rates are time-limited and will not be offered again after the first 3&ndash;5 engagements. &nbsp;&middot;&nbsp; Direct access to principal on every project. &nbsp;&middot;&nbsp; Faster turnaround than industry standard. &nbsp;&middot;&nbsp; Retainer options available after first engagement.</div>
   </div>
@@ -498,17 +556,20 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   <div class="cta-inner">
     <h2 class="cta-headline">Ready to Build<br>Something Real?</h2>
     <p class="cta-sub">Let&rsquo;s talk about your project. No obligation. No pitch deck. Just a real conversation.</p>
-    <a href="/cdn-cgi/l/email-protection#ecae898d9998858a9980ad828d9e8f8495a8899f858b829fac8b818d8580c28f8381" class="btn-dark"><span class="__cf_email__" data-cfemail="0143646074756867746d406f607362697845647268666f7241666c60686d2f626e6c">[email&#160;protected]</span></a>
+    <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="btn-dark">BeautifulAnarchyDesigns@gmail.com</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-brand">Beautiful Anarchy Designs</div>
   <div class="footer-tagline">We are the beauty in chaos.</div>
-  <a href="/cdn-cgi/l/email-protection#d795b2b6a2a3beb1a2bb96b9b6a5b4bfae93b2a4beb0b9a497b0bab6bebbf9b4b8ba" class="footer-contact"><span class="__cf_email__" data-cfemail="86c4e3e7f3f2efe0f3eac7e8e7f4e5eeffc2e3f5efe1e8f5c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a>
+  <div class="footer-links">
+    <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="footer-contact">BeautifulAnarchyDesigns@gmail.com</a>
+    <a href="https://www.instagram.com/beautifulanarchydesigns?igsh=b2o3eDd0anE1Y2Rx" class="footer-social" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://www.facebook.com/share/18mAZu6JJA/" class="footer-social" target="_blank" rel="noopener noreferrer">Facebook</a>
+  </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
