@@ -368,33 +368,171 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
       <button class="comp-tab" data-panel="p02">Budget Architecture</button>
       <button class="comp-tab" data-panel="p03">Strategic Development</button>
     </div>
+
     <div class="comp-panel active" id="p01">
-      <div class="comp-product-header"><div class="comp-product-eyebrow">Product 01</div><div class="comp-product-title">Script Analysis</div><div class="comp-product-desc">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</div></div>
-      <div class="comp-split">
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Development Executive</td><td>$800/day</td><td>5 days</td><td>$4,000</td></tr><tr><td>Story Editor</td><td>$1,500 flat</td><td>10&ndash;14 days</td><td>$1,500</td></tr><tr><td>Script Coverage Reader</td><td>$400 flat</td><td>2 days</td><td>$400</td></tr><tr><td>Script Consultant</td><td>$3,500 flat</td><td>5&ndash;7 days</td><td>$3,500</td></tr><tr><td>Line Producer (feasibility)</td><td>$600/day</td><td>2 days</td><td>$1,200</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>4 hours</td><td>$1,400</td></tr><tr><td>Development Assistant</td><td>$25/hr</td><td>15 hours</td><td>$375</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>3&ndash;6 Weeks</td><td>$12,375</td></tr></tbody></table></div>
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><div class="comp-table-wrap"><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Narrative Diagnosis</td><td>Proprietary analysis engine maps story architecture, character logic, and structural integrity in one comprehensive pass</td><td>Day 1&ndash;2</td></tr><tr><td>Production Feasibility</td><td>Adversarial scenario testing stress-tests every scene flag for exposure. Revisions sequenced by cost impact</td><td>Day 2&ndash;3</td></tr><tr><td>Budget Impact / Scene</td><td>Real cost modeling per scene flag. Every revision note carries a dollar-weight for intelligent triage</td><td>Day 3&ndash;4</td></tr><tr><td>Revision Roadmap</td><td>Clear, prioritized action document sealed under BAD quality governance before delivery</td><td>Day 4&ndash;5</td></tr><tr><td>Governance &amp; QA</td><td>Multi-stage verification. Full reasoning chain logged.</td><td>Day 5</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Single operator. Fully governed.</td><td>5&ndash;7 Days</td></tr></tbody></table></div></div>
+      <div class="comp-product-header">
+        <div class="comp-product-eyebrow">Product 01</div>
+        <div class="comp-product-title">Script Analysis</div>
+        <div class="comp-product-desc">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</div>
       </div>
-      <div class="comp-savings"><div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$8,875&ndash;$10,375</div><div class="savings-cell-sub">vs. full industry staffing model</div></div><div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">84&ndash;90%</div><div class="savings-cell-sub">budget reduction</div></div><div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">2&ndash;4 Weeks</div><div class="savings-cell-sub">returned to production</div></div></div>
+      <div class="comp-split">
+        <div class="comp-col">
+          <div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div>
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup>
+              <thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead>
+              <tbody>
+                <tr><td>Development Executive</td><td>$800/day</td><td>5 days</td><td>$4,000</td></tr>
+                <tr><td>Story Editor</td><td>$1,500 flat</td><td>10&ndash;14 days</td><td>$1,500</td></tr>
+                <tr><td>Script Coverage Reader</td><td>$400 flat</td><td>2 days</td><td>$400</td></tr>
+                <tr><td>Script Consultant</td><td>$3,500 flat</td><td>5&ndash;7 days</td><td>$3,500</td></tr>
+                <tr><td>Line Producer (feasibility)</td><td>$600/day</td><td>2 days</td><td>$1,200</td></tr>
+                <tr><td>Entertainment Attorney</td><td>$350/hr</td><td>4 hours</td><td>$1,400</td></tr>
+                <tr><td>Development Assistant</td><td>$25/hr</td><td>15 hours</td><td>$375</td></tr>
+                <tr class="comp-total"><td colspan="2">Industry Total</td><td>3&ndash;6 Weeks</td><td>$12,375</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="comp-col">
+          <div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div>
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup>
+              <thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead>
+              <tbody>
+                <tr><td>Narrative Diagnosis</td><td>Proprietary analysis engine maps story architecture, character logic, and structural integrity in one comprehensive pass</td><td>Day 1&ndash;2</td></tr>
+                <tr><td>Production Feasibility</td><td>Adversarial scenario testing stress-tests every scene flag for exposure. Revisions sequenced by cost impact</td><td>Day 2&ndash;3</td></tr>
+                <tr><td>Budget Impact / Scene</td><td>Real cost modeling per scene flag. Every revision note carries a dollar-weight for intelligent triage</td><td>Day 3&ndash;4</td></tr>
+                <tr><td>Revision Roadmap</td><td>Clear, prioritized action document sealed under BAD quality governance before delivery</td><td>Day 4&ndash;5</td></tr>
+                <tr><td>Governance &amp; QA</td><td>Multi-stage verification. Full reasoning chain logged.</td><td>Day 5</td></tr>
+                <tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Single operator. Fully governed.</td><td>5&ndash;7 Days</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="comp-savings">
+        <div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$8,875&ndash;$10,375</div><div class="savings-cell-sub">vs. full industry staffing model</div></div>
+        <div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">84&ndash;90%</div><div class="savings-cell-sub">budget reduction</div></div>
+        <div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">2&ndash;4 Weeks</div><div class="savings-cell-sub">returned to production</div></div>
+      </div>
     </div>
+
     <div class="comp-panel" id="p02">
-      <div class="comp-product-header"><div class="comp-product-eyebrow">Product 02</div><div class="comp-product-title">Budget Architecture</div><div class="comp-product-desc">Built for how independent and non-profit productions actually work &mdash; not the Hollywood model. Real numbers. Real constraints. Real paths to production.</div></div>
-      <div class="comp-split">
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Line Producer</td><td>$1,200/day</td><td>10 days</td><td>$12,000</td></tr><tr><td>Production Accountant</td><td>$800/day</td><td>8 days</td><td>$6,400</td></tr><tr><td>UPM</td><td>$1,000/day</td><td>5 days</td><td>$5,000</td></tr><tr><td>Dept. Head Consults &times;5</td><td>$500/dept</td><td>1 day ea.</td><td>$2,500</td></tr><tr><td>Payroll Service &amp; Software</td><td>Flat fee</td><td>Ongoing</td><td>$1,500</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>6 hours</td><td>$2,100</td></tr><tr><td>Grant Writer (non-profit)</td><td>$7,500 flat</td><td>3&ndash;4 wks</td><td>$7,500</td></tr><tr><td>Investor Package Designer</td><td>$4,500 flat</td><td>2 weeks</td><td>$4,500</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>6&ndash;10 Weeks</td><td>$41,500</td></tr></tbody></table></div>
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><div class="comp-table-wrap"><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Line-Item Budget</td><td>Built from first principles for indie/non-profit reality. Scaled to your actual resource environment &mdash; not studio-rate placeholders</td><td>Day 1&ndash;3</td></tr><tr><td>Grant Alignment</td><td>Grant logic built in from the start. Budget maps to funder reporting categories &mdash; no rebuild needed for submission</td><td>Day 2&ndash;4</td></tr><tr><td>Cost Optimization</td><td>Adversarial cost analysis finds every exposure. Cut scenarios stress-tested without creative compromise</td><td>Day 3&ndash;5</td></tr><tr><td>Investor Packaging</td><td>Investor-ready financial documentation is a native output of the same build. No separate designer engagement</td><td>Day 5&ndash;7</td></tr><tr><td>Governance &amp; QA</td><td>All cost assumptions and judgment calls logged with full audit trail</td><td>Day 7</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</td><td>7&ndash;10 Days</td></tr></tbody></table></div></div>
+      <div class="comp-product-header">
+        <div class="comp-product-eyebrow">Product 02</div>
+        <div class="comp-product-title">Budget Architecture</div>
+        <div class="comp-product-desc">Built for how independent and non-profit productions actually work &mdash; not the Hollywood model. Real numbers. Real constraints. Real paths to production.</div>
       </div>
-      <div class="comp-savings"><div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$35,500&ndash;$41,000</div><div class="savings-cell-sub">vs. full industry staffing model</div></div><div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">88&ndash;99%</div><div class="savings-cell-sub">budget reduction</div></div><div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">4&ndash;8 Weeks</div><div class="savings-cell-sub">returned to production</div></div></div>
+      <div class="comp-split">
+        <div class="comp-col">
+          <div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div>
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup>
+              <thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead>
+              <tbody>
+                <tr><td>Line Producer</td><td>$1,200/day</td><td>10 days</td><td>$12,000</td></tr>
+                <tr><td>Production Accountant</td><td>$800/day</td><td>8 days</td><td>$6,400</td></tr>
+                <tr><td>UPM</td><td>$1,000/day</td><td>5 days</td><td>$5,000</td></tr>
+                <tr><td>Dept. Head Consults &times;5</td><td>$500/dept</td><td>1 day ea.</td><td>$2,500</td></tr>
+                <tr><td>Payroll Service &amp; Software</td><td>Flat fee</td><td>Ongoing</td><td>$1,500</td></tr>
+                <tr><td>Entertainment Attorney</td><td>$350/hr</td><td>6 hours</td><td>$2,100</td></tr>
+                <tr><td>Grant Writer (non-profit)</td><td>$7,500 flat</td><td>3&ndash;4 wks</td><td>$7,500</td></tr>
+                <tr><td>Investor Package Designer</td><td>$4,500 flat</td><td>2 weeks</td><td>$4,500</td></tr>
+                <tr class="comp-total"><td colspan="2">Industry Total</td><td>6&ndash;10 Weeks</td><td>$41,500</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="comp-col">
+          <div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div>
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup>
+              <thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead>
+              <tbody>
+                <tr><td>Line-Item Budget</td><td>Built from first principles for indie/non-profit reality. Scaled to your actual resource environment &mdash; not studio-rate placeholders</td><td>Day 1&ndash;3</td></tr>
+                <tr><td>Grant Alignment</td><td>Grant logic built in from the start. Budget maps to funder reporting categories &mdash; no rebuild needed for submission</td><td>Day 2&ndash;4</td></tr>
+                <tr><td>Cost Optimization</td><td>Adversarial cost analysis finds every exposure. Cut scenarios stress-tested without creative compromise</td><td>Day 3&ndash;5</td></tr>
+                <tr><td>Investor Packaging</td><td>Investor-ready financial documentation is a native output of the same build. No separate designer engagement</td><td>Day 5&ndash;7</td></tr>
+                <tr><td>Governance &amp; QA</td><td>All cost assumptions and judgment calls logged with full audit trail</td><td>Day 7</td></tr>
+                <tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</td><td>7&ndash;10 Days</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="comp-savings">
+        <div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$35,500&ndash;$41,000</div><div class="savings-cell-sub">vs. full industry staffing model</div></div>
+        <div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">88&ndash;99%</div><div class="savings-cell-sub">budget reduction</div></div>
+        <div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">4&ndash;8 Weeks</div><div class="savings-cell-sub">returned to production</div></div>
+      </div>
     </div>
+
     <div class="comp-panel" id="p03">
-      <div class="comp-product-header"><div class="comp-product-eyebrow">Product 03</div><div class="comp-product-title">Strategic Development</div><div class="comp-product-desc">Your story deserves to compete. We position your project for funding, distribution, and the institutional partnerships that turn vision into release.</div></div>
-      <div class="comp-split">
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div><table class="comp-table"><colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup><thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead><tbody><tr><td>Development Executive</td><td>$800/day</td><td>15 days</td><td>$12,000</td></tr><tr><td>Producer&rsquo;s Rep</td><td>10&ndash;15%</td><td>Ongoing</td><td>$10,000*</td></tr><tr><td>Entertainment Attorney</td><td>$350/hr</td><td>20 hours</td><td>$7,000</td></tr><tr><td>Grant Writer</td><td>$7,500 flat</td><td>3&ndash;4 wks</td><td>$7,500</td></tr><tr><td>PR / Marketing Consult</td><td>$4,000/mo</td><td>2&ndash;3 mos</td><td>$9,000</td></tr><tr><td>Distribution Consultant</td><td>$10,000 flat</td><td>4&ndash;6 wks</td><td>$10,000</td></tr><tr><td>Festival Strategist</td><td>$3,750 flat</td><td>2&ndash;4 wks</td><td>$3,750</td></tr><tr><td>Pitch Deck Designer</td><td>$5,000 flat</td><td>2&ndash;3 wks</td><td>$5,000</td></tr><tr class="comp-total"><td colspan="2">Industry Total</td><td>4&ndash;6 Months</td><td>$64,250</td></tr></tbody></table><div style="font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:rgba(240,237,230,0.2);margin-top:0.6rem;">* Estimated on $150K deal</div></div>
-        <div class="comp-col"><div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div><table class="comp-table"><colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup><thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead><tbody><tr><td>Funding Strategy</td><td>Full funding landscape mapped. Applications positioned against project profile and funder priorities in one integrated document</td><td>Day 1&ndash;5</td></tr><tr><td>Distribution Planning</td><td>Festival windows, streaming, institutional placement, and licensing mapped against the funding timeline</td><td>Day 3&ndash;8</td></tr><tr><td>Partnership Frameworks</td><td>Targeted outreach architecture built. Partners identified, tiered, and framed with project-specific value propositions</td><td>Day 5&ndash;10</td></tr><tr><td>Pitch Deck &amp; Docs</td><td>Complete pitch deck and development documentation as a native deliverable &mdash; same operator, same build, no agency handoff</td><td>Day 8&ndash;14</td></tr><tr><td>Governance &amp; QA</td><td>All positioning assumptions stress-tested. Final package cleared. Every decision logged.</td><td>Day 12&ndash;14</td></tr><tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; One build. One operator. No siloed consultants.</td><td>2&ndash;3 Weeks</td></tr></tbody></table></div></div>
+      <div class="comp-product-header">
+        <div class="comp-product-eyebrow">Product 03</div>
+        <div class="comp-product-title">Strategic Development</div>
+        <div class="comp-product-desc">Your story deserves to compete. We position your project for funding, distribution, and the institutional partnerships that turn vision into release.</div>
       </div>
-      <div class="comp-savings"><div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$55,750&ndash;$63,050</div><div class="savings-cell-sub">vs. full industry staffing model</div></div><div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">87&ndash;98%</div><div class="savings-cell-sub">budget reduction</div></div><div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">3&ndash;5 Months</div><div class="savings-cell-sub">returned to production</div></div></div>
+      <div class="comp-split">
+        <div class="comp-col">
+          <div class="comp-col-header"><span class="comp-col-label ind">Industry Standard</span><span class="comp-col-context">Full staffing model</span></div>
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <colgroup><col style="width:36%"><col style="width:22%"><col style="width:21%"><col style="width:21%"></colgroup>
+              <thead><tr><th>Role</th><th>Rate</th><th>Time</th><th>Cost</th></tr></thead>
+              <tbody>
+                <tr><td>Development Executive</td><td>$800/day</td><td>15 days</td><td>$12,000</td></tr>
+                <tr><td>Producer&rsquo;s Rep</td><td>10&ndash;15%</td><td>Ongoing</td><td>$10,000*</td></tr>
+                <tr><td>Entertainment Attorney</td><td>$350/hr</td><td>20 hours</td><td>$7,000</td></tr>
+                <tr><td>Grant Writer</td><td>$7,500 flat</td><td>3&ndash;4 wks</td><td>$7,500</td></tr>
+                <tr><td>PR / Marketing Consult</td><td>$4,000/mo</td><td>2&ndash;3 mos</td><td>$9,000</td></tr>
+                <tr><td>Distribution Consultant</td><td>$10,000 flat</td><td>4&ndash;6 wks</td><td>$10,000</td></tr>
+                <tr><td>Festival Strategist</td><td>$3,750 flat</td><td>2&ndash;4 wks</td><td>$3,750</td></tr>
+                <tr><td>Pitch Deck Designer</td><td>$5,000 flat</td><td>2&ndash;3 wks</td><td>$5,000</td></tr>
+                <tr class="comp-total"><td colspan="2">Industry Total</td><td>4&ndash;6 Months</td><td>$64,250</td></tr>
+              </tbody>
+            </table>
+            <div style="font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.1em;color:rgba(240,237,230,0.2);margin-top:0.6rem;">* Estimated on $150K deal</div>
+          </div>
+        </div>
+        <div class="comp-col">
+          <div class="comp-col-header"><span class="comp-col-label bad">BAD Standard</span><span class="comp-col-context">Single operator pipeline</span></div>
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <colgroup><col style="width:30%"><col style="width:52%"><col style="width:18%"></colgroup>
+              <thead><tr><th>Function</th><th>How BAD Executes It</th><th>Timeline</th></tr></thead>
+              <tbody>
+                <tr><td>Funding Strategy</td><td>Full funding landscape mapped. Applications positioned against project profile and funder priorities in one integrated document</td><td>Day 1&ndash;5</td></tr>
+                <tr><td>Distribution Planning</td><td>Festival windows, streaming, institutional placement, and licensing mapped against the funding timeline</td><td>Day 3&ndash;8</td></tr>
+                <tr><td>Partnership Frameworks</td><td>Targeted outreach architecture built. Partners identified, tiered, and framed with project-specific value propositions</td><td>Day 5&ndash;10</td></tr>
+                <tr><td>Pitch Deck &amp; Docs</td><td>Complete pitch deck and development documentation as a native deliverable &mdash; same operator, same build, no agency handoff</td><td>Day 8&ndash;14</td></tr>
+                <tr><td>Governance &amp; QA</td><td>All positioning assumptions stress-tested. Final package cleared. Every decision logged.</td><td>Day 12&ndash;14</td></tr>
+                <tr class="comp-total-bad"><td colspan="2">BAD Total &mdash; One build. One operator. No siloed consultants.</td><td>2&ndash;3 Weeks</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="comp-savings">
+        <div class="savings-cell"><div class="savings-cell-label">Cost Savings</div><div class="savings-cell-value">~$55,750&ndash;$63,050</div><div class="savings-cell-sub">vs. full industry staffing model</div></div>
+        <div class="savings-cell"><div class="savings-cell-label">Efficiency Gain</div><div class="savings-cell-value">87&ndash;98%</div><div class="savings-cell-sub">budget reduction</div></div>
+        <div class="savings-cell"><div class="savings-cell-label">Time Recovered</div><div class="savings-cell-value">3&ndash;5 Months</div><div class="savings-cell-sub">returned to production</div></div>
+      </div>
     </div>
+
     <div class="comp-aggregate">
       <div class="comp-agg-label">// Combined Savings &mdash; All Three Products</div>
-      <div class="comp-agg-grid"><div class="agg-cell"><div class="agg-label">Total Industry Cost</div><div class="agg-value v-red">$117,725</div><div class="agg-sub">full staffing model</div></div><div class="agg-cell"><div class="agg-label">What BAD Delivers</div><div class="agg-value v-gold">Same scope.</div><div class="agg-sub">one operator &middot; full governance</div></div><div class="agg-cell"><div class="agg-label">Average Savings</div><div class="agg-value v-green">Up to 88%</div><div class="agg-sub">across all three products</div></div><div class="agg-cell"><div class="agg-label">Time Recovered</div><div class="agg-value v-green">6&ndash;9 Mo</div><div class="agg-sub">returned to production</div></div></div>
+      <div class="comp-agg-grid">
+        <div class="agg-cell"><div class="agg-label">Total Industry Cost</div><div class="agg-value v-red">$117,725</div><div class="agg-sub">full staffing model</div></div>
+        <div class="agg-cell"><div class="agg-label">What BAD Delivers</div><div class="agg-value v-gold">Same scope.</div><div class="agg-sub">one operator &middot; full governance</div></div>
+        <div class="agg-cell"><div class="agg-label">Average Savings</div><div class="agg-value v-green">Up to 88%</div><div class="agg-sub">across all three products</div></div>
+        <div class="agg-cell"><div class="agg-label">Time Recovered</div><div class="agg-value v-green">6&ndash;9 Mo</div><div class="agg-sub">returned to production</div></div>
+      </div>
     </div>
   </div>
 </section>
