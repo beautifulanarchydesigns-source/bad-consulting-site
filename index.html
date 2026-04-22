@@ -533,7 +533,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
         <div class="bundle-price">$1,800</div>
         <div class="bundle-savings">Saves you ~$500 vs. individual rates</div>
       </div>
-      <a href="/cdn-cgi/l/email-protection#91d3f4f0e4e5f8f7e4fdd0fff0e3f2f9e8d5f4e2f8f6ffe2d1f6fcf0f8fdbff2fefc" class="bundle-cta">Claim This Rate</a>
+      <a href="#" class="bundle-cta email-link" data-label="1">Claim This Rate</a>
     </div>
     <div class="pricing-disclaimer">Founding client rates are time-limited and will not be offered again after the first 3&ndash;5 engagements. &nbsp;&middot;&nbsp; Direct access to principal on every project. &nbsp;&middot;&nbsp; Faster turnaround than industry standard. &nbsp;&middot;&nbsp; Retainer options available after first engagement.</div>
   </div>
@@ -637,17 +637,16 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   <div class="cta-inner">
     <h2 class="cta-headline">Ready to Build<br>Something Real?</h2>
     <p class="cta-sub">Let&rsquo;s talk about your project. No obligation. No pitch deck. Just a real conversation.</p>
-    <a href="/cdn-cgi/l/email-protection#ecae898d9998858a9980ad828d9e8f8495a8899f858b829fac8b818d8580c28f8381" class="btn-dark"><span class="__cf_email__" data-cfemail="0143646074756867746d406f607362697845647268666f7241666c60686d2f626e6c">[email&#160;protected]</span></a>
+    <a href="#" class="btn-dark email-link" data-label="1"><span></span></a>
   </div>
 </section>
 
 <footer>
   <div class="footer-brand">Beautiful Anarchy Designs</div>
   <div class="footer-tagline">We are the beauty in chaos.</div>
-  <a href="/cdn-cgi/l/email-protection#d795b2b6a2a3beb1a2bb96b9b6a5b4bfae93b2a4beb0b9a497b0bab6bebbf9b4b8ba" class="footer-contact"><span class="__cf_email__" data-cfemail="86c4e3e7f3f2efe0f3eac7e8e7f4e5eeffc2e3f5efe1e8f5c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a>
+  <a href="#" class="footer-contact email-link" data-label="1"><span></span></a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -668,6 +667,19 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
       document.getElementById(tab.dataset.panel).classList.add('active');
     });
   });
+
+  // Email obfuscation
+  (function(){
+    var u='BeautifulAnarchyDesigns';
+    var d='gmail.com';
+    var e=u+'@'+d;
+    document.querySelectorAll('.email-link').forEach(function(el){
+      el.href='mailto:'+e;
+      var sp=el.querySelector('span');
+      if(sp) sp.textContent=e;
+      else if(el.dataset.label==='1' && el.textContent.trim()==='') el.textContent=e;
+    });
+  })();
 </script>
 </body>
 </html>
