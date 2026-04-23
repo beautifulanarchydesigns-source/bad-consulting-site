@@ -34,12 +34,9 @@ nav a:hover{color:var(--gold);}
 .btn-ghost:hover{color:var(--gold);border-color:var(--gold);}
 .hero-right{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .hero-graphic{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%);}
-.hero-badge{position:relative;z-index:2;width:280px;height:280px;border:1px solid rgba(201,168,76,0.3);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:fadeUp 0.8s 0.4s ease both,spin 40s linear infinite;}
-.hero-badge::before{content:'';position:absolute;inset:12px;border:1px solid rgba(201,168,76,0.15);border-radius:50%;}
-.badge-inner{animation:spinReverse 40s linear infinite;display:flex;flex-direction:column;align-items:center;}
-.badge-big{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;color:var(--gold);line-height:1;}
-.badge-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,237,230,0.4);margin-top:4px;}
-.badge-rule{width:40px;height:1px;background:var(--gold-dim);margin:0.6rem 0;}
+.hero-badge{position:relative;z-index:2;width:340px;display:flex;align-items:center;justify-content:center;animation:fadeUp 0.8s 0.4s ease both;}
+.hero-badge::before{display:none;}
+.hero-logo-img{width:100%;height:auto;display:block;object-fit:contain;}
 .hero-ticker{position:absolute;bottom:0;left:0;right:0;border-top:1px solid rgba(201,168,76,0.2);padding:0.7rem 0;background:rgba(10,10,10,0.6);overflow:hidden;z-index:10;}
 .ticker-track{display:flex;gap:4rem;animation:ticker 30s linear infinite;white-space:nowrap;width:max-content;}
 .ticker-item{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-dim);}
@@ -314,18 +311,14 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   .comp-saving{grid-template-columns:1fr;}
   .comp-saving-cell+.comp-saving-cell{border-left:none;border-top:1px solid rgba(255,255,255,0.05);}
 }
-
-/* ── LOGO IMAGE ──────────────────────────────────────────────────────────── */
-.logo-img-link{display:block;text-decoration:none;flex-shrink:0;}
-.logo-img{height:52px;width:auto;display:block;object-fit:contain;mix-blend-mode:normal;}
-@media(max-width:900px){.logo-img{height:40px;}}
 </style>
 </head>
 <body>
 <header>
-  <a href="#hero" class="logo-img-link">
-    <img src="logo.png" alt="Beautiful Anarchy Designs" class="logo-img">
-  </a>
+  <div class="logo-block">
+    <span class="logo-main">Beautiful Anarchy Designs</span>
+    <span class="logo-sub">We are the beauty in chaos</span>
+  </div>
   <nav>
     <a href="#services">Services</a>
     <a href="#comparison">The Numbers</a>
@@ -349,11 +342,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   <div class="hero-right">
     <div class="hero-graphic"></div>
     <div class="hero-badge">
-      <div class="badge-inner">
-        <span class="badge-big">BAD</span>
-        <div class="badge-rule"></div>
-        <span class="badge-label">Est. New Orleans</span>
-      </div>
+      <img src="logo.png" alt="Beautiful Anarchy Designs" class="hero-logo-img">
     </div>
   </div>
   <div class="hero-ticker">
