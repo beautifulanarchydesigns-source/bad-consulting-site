@@ -52,7 +52,7 @@ nav a:hover{color:var(--gold);}
 .section-label{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5.5rem);line-height:0.9;color:var(--white);}
 .section-rule{flex:1;height:1px;background:rgba(201,168,76,0.2);}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(201,168,76,0.15);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(201,168,76,0.15);}.service-card:nth-child(3){border-right:none;}.service-card:nth-child(4){border-top:1px solid rgba(201,168,76,0.12);}.service-card:nth-child(5){border-top:1px solid rgba(201,168,76,0.12);border-right:none;}
 .service-card{padding:3.5rem 2.5rem;border-right:1px solid rgba(201,168,76,0.12);position:relative;overflow:hidden;opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .service-card:last-child{border-right:none;}
 .service-card.visible{opacity:1;transform:none;}
@@ -311,13 +311,115 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   .comp-saving{grid-template-columns:1fr;}
   .comp-saving-cell+.comp-saving-cell{border-left:none;border-top:1px solid rgba(255,255,255,0.05);}
 }
+
+/* ── PRICING TIER TABS ───────────────────────────────────────────────────── */
+.tier-tabs{display:flex;gap:0;border-bottom:1px solid rgba(201,168,76,0.2);margin-bottom:2rem;overflow-x:auto;}
+.tier-tab{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);padding:1rem 2rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;background:none;white-space:nowrap;}
+.tier-tab:hover{color:rgba(240,237,230,0.65);}
+.tier-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tier-descriptor{margin-bottom:2.5rem;}
+.tier-desc-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.5rem;}
+.tier-desc-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(240,237,230,0.45);line-height:1.6;max-width:640px;}
+/* 5-card grid: 3 top row, 2 bottom centered */
+#pricing .pricing-grid{grid-template-columns:repeat(3,1fr);}
+/* ── CREATIVE PARTNERSHIP ROW ────────────────────────────────────────────── */
+.cp-row{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.3);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;margin-top:1px;flex-wrap:wrap;}
+.cp-left{flex:1;min-width:280px;}
+.cp-tag{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.cp-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin-bottom:0.8rem;}
+.cp-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(240,237,230,0.5);line-height:1.6;margin-bottom:0.8rem;max-width:480px;}
+.cp-note{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,168,76,0.5);}
+.cp-right{text-align:center;flex-shrink:0;}
+.cp-floor-label{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);margin-bottom:0.2rem;}
+.cp-floor{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:1rem;}
+.cp-equity-label{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);margin-bottom:0.2rem;}
+.cp-equity{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:rgba(201,168,76,0.7);line-height:1;}
+.cp-equity-sub{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.2);margin-top:0.2rem;}
+@media(max-width:900px){
+  .cp-row{flex-direction:column;align-items:flex-start;padding:2rem;}
+  .cp-right{text-align:left;}
+  .tier-tabs{margin-bottom:1.5rem;}
+}
+
+/* ── PRICING TIER LADDER ─────────────────────────────────────────────────── */
+.pricing-section-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;margin-top:4rem;display:block;}
+.tier-ladder{display:flex;flex-direction:column;gap:0;border:1px solid rgba(201,168,76,0.15);margin-bottom:0;}
+.tier-item{display:flex;align-items:center;gap:2rem;padding:1.4rem 2rem;border-bottom:1px solid rgba(201,168,76,0.08);transition:background 0.2s;}
+.tier-item:last-child{border-bottom:none;}
+.tier-item.active{background:rgba(201,168,76,0.05);}
+.tier-marker{flex-shrink:0;}
+.tier-dot{width:12px;height:12px;border:1px solid rgba(201,168,76,0.35);display:block;}
+.tier-dot.filled{background:var(--gold);border-color:var(--gold);}
+.tier-body{flex:1;}
+.tier-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);line-height:1;margin-bottom:0.2rem;}
+.tier-item.active .tier-name{color:var(--gold);}
+.tier-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:rgba(240,237,230,0.4);line-height:1.4;}
+.tier-status{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;flex-shrink:0;}
+.tier-status.open{color:rgba(240,237,230,0.55);}
+.tier-status.gated{color:rgba(240,237,230,0.2);border:1px solid rgba(240,237,230,0.1);padding:0.3rem 0.7rem;}
+.tier-remain{color:var(--gold);}
+/* PRICING GRID — 5 cards, wrap to 3+2 */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.12);margin-bottom:1px;}
+/* CREATIVE PARTNERSHIP NOTICE */
+.cp-notice{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1.8rem 2.5rem;margin-top:1px;margin-bottom:0;}
+.cp-notice-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.cp-notice-body{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(240,237,230,0.6);line-height:1.6;}
+.cp-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);}
+.cp-link:hover{border-bottom-color:var(--gold);}
+@media(max-width:900px){
+  .tier-item{flex-wrap:wrap;gap:1rem;padding:1.2rem 1.5rem;}
+  .tier-status{width:100%;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .cp-notice{padding:1.5rem;}
+}
+
+/* ── TIER TABS (PRICING) ─────────────────────────────────────────────────── */
+.tier-tabs{display:flex;border-bottom:1px solid rgba(201,168,76,0.2);margin-bottom:4rem;overflow-x:auto;gap:0;}
+.tier-tab{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);padding:1rem 2rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;background:none;white-space:nowrap;}
+.tier-tab:hover{color:rgba(240,237,230,0.65);}
+.tier-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tier-panel{display:none;}
+.tier-panel.active{display:block;}
+.tier-panel-header{margin-bottom:3rem;}
+.tier-panel-eyebrow{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.tier-panel-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--white);line-height:1;margin-bottom:0.8rem;}
+.tier-panel-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(240,237,230,0.5);max-width:680px;line-height:1.7;margin-bottom:2rem;}
+/* TIER PRICE GRID */
+.tier-price-grid{display:flex;flex-direction:column;border:1px solid rgba(201,168,76,0.12);margin-bottom:2rem;}
+.tier-price-row{display:grid;grid-template-columns:100px 1fr 140px 120px;gap:0;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.04);align-items:center;}
+.tier-price-row:last-child{border-bottom:none;}
+.tier-price-row:hover{background:rgba(201,168,76,0.03);}
+.tpr-category{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.6;}
+.tpr-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(240,237,230,0.8);}
+.tpr-delivery{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.25);text-align:center;}
+.tpr-price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);text-align:right;line-height:1;}
+.tier-cta-row{display:flex;align-items:center;gap:2rem;margin-top:2rem;flex-wrap:wrap;}
+.tier-cta-note{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.25);max-width:520px;line-height:1.7;}
+/* CREATIVE PARTNERSHIP */
+.cp-structure{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.12);margin-bottom:2rem;}
+.cp-col{background:var(--black);padding:2.5rem;}
+.cp-col-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+.cp-row{display:flex;align-items:flex-start;gap:1rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.cp-row:last-of-type{border-bottom:none;}
+.cp-row-rule{width:16px;height:1px;background:rgba(201,168,76,0.4);flex-shrink:0;margin-top:0.6rem;}
+.cp-row-body{flex:1;}
+.cp-row-name{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.6);}
+.cp-row-detail{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:rgba(240,237,230,0.4);margin-top:0.2rem;line-height:1.4;}
+.cp-note{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.2);margin-top:1.5rem;line-height:1.7;}
+.pricing-section-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+@media(max-width:900px){
+  .tier-price-row{grid-template-columns:80px 1fr 100px;gap:0.5rem;}
+  .tpr-delivery{display:none;}
+  .cp-structure{grid-template-columns:1fr;}
+  .tier-cta-row{flex-direction:column;align-items:flex-start;}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="logo-block">
     <span class="logo-main">Beautiful Anarchy Designs</span>
-    <span class="logo-sub">We are the beauty in chaos</span>
+    <span class="logo-sub">We are the Beauty, in Chaos.</span>
   </div>
   <nav>
     <a href="#services">Services</a>
@@ -403,42 +505,45 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     <h2 class="section-title">The Work</h2>
   </div>
   <div class="services-grid">
+
     <div class="service-card">
       <span class="service-num">01</span>
       <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-      <h3 class="service-name">Script Analysis</h3>
-      <p class="service-body">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</p>
+      <h3 class="service-name">Analysis</h3>
+      <p class="service-body">We read your project with adversarial precision &mdash; pressure-testing narrative structure, production feasibility, market position, and adaptation viability before a single dollar moves.</p>
       <div class="service-detail">
-        <div class="service-detail-item">Structural narrative diagnosis</div>
-        <div class="service-detail-item">Production feasibility flags before you spend a dollar</div>
-        <div class="service-detail-item">Budget impact assessment per scene</div>
-        <div class="service-detail-item">Clear, actionable revision roadmap</div>
+        <div class="service-detail-item">Script Coverage</div>
+        <div class="service-detail-item">Production Audit</div>
+        <div class="service-detail-item">Adaptation Feasibility</div>
+        <div class="service-detail-item">Market Positioning Read</div>
       </div>
     </div>
+
     <div class="service-card">
       <span class="service-num">02</span>
       <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 12h6"/></svg></div>
-      <h3 class="service-name">Budget Architecture</h3>
-      <p class="service-body">Built for how independent and non-profit productions actually work &mdash; not the Hollywood model. Real numbers. Real constraints. Real paths to production.</p>
+      <h3 class="service-name">Build</h3>
+      <p class="service-body">We produce what didn&rsquo;t exist before &mdash; budgets built for your reality, production binders that compete at investor level, visual architecture before a frame rolls, and pitch-ready documentation.</p>
       <div class="service-detail">
-        <div class="service-detail-item">Line-item budgets scaled to your reality</div>
-        <div class="service-detail-item">Non-profit &amp; grant-aligned budget structuring</div>
-        <div class="service-detail-item">Cost optimization without creative compromise</div>
-        <div class="service-detail-item">Investor-ready financial packaging</div>
+        <div class="service-detail-item">Budget Architecture</div>
+        <div class="service-detail-item">Full Production Binder &mdash; Film &amp; Theater</div>
+        <div class="service-detail-item">Pre-Visualization Suite</div>
+        <div class="service-detail-item">Pre-Pitch Sprint</div>
       </div>
     </div>
+
     <div class="service-card">
       <span class="service-num">03</span>
       <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-      <h3 class="service-name">Strategic Development</h3>
-      <p class="service-body">Your story deserves to compete. We position your project for funding, distribution, and the institutional partnerships that turn vision into release.</p>
+      <h3 class="service-name">Strategy</h3>
+      <p class="service-body">We tell you how to move and where to go &mdash; funding strategy, distribution pathways, institutional partnerships, and pitch preparation that positions your project to compete and win.</p>
       <div class="service-detail">
-        <div class="service-detail-item">Funding strategy &amp; grant positioning</div>
-        <div class="service-detail-item">Distribution pathway planning</div>
-        <div class="service-detail-item">Institutional partnership outreach frameworks</div>
-        <div class="service-detail-item">Pitch deck &amp; development documentation</div>
+        <div class="service-detail-item">Strategic Development</div>
+        <div class="service-detail-item">Distribution Roadmap</div>
+        <div class="service-detail-item">Pitch Preparation</div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -449,16 +554,16 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
       <div class="section-rule"></div>
       <h2 class="section-title">The Real Cost</h2>
     </div>
-    <p class="comp-intro">The industry model splits every service across five to eight separate billing relationships, weeks of scheduling, and siloed deliverables. Here is what that actually costs &mdash; and what BAD delivers instead.</p>
+    <p class="comp-intro">The industry model splits every service across five to eight separate billing relationships, weeks of scheduling, and siloed deliverables. Here is what that actually costs &mdash; and what Beautiful Anarchy Designs delivers instead at Professional tier rates.</p>
     <div class="comp-tabs">
-      <button class="comp-tab active" data-panel="p01">Script Analysis</button>
+      <button class="comp-tab active" data-panel="p01">Script Coverage</button>
       <button class="comp-tab" data-panel="p02">Budget Architecture</button>
       <button class="comp-tab" data-panel="p03">Strategic Development</button>
     </div>
 
     <div class="comp-panel active" id="p01">
       <div class="comp-product-eyebrow">Product 01</div>
-      <div class="comp-product-title">Script Analysis</div>
+      <div class="comp-product-title">Script Coverage</div>
       <div class="comp-product-desc">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</div>
       <div class="comp-columns">
         <div class="comp-col">
@@ -483,12 +588,12 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Revision Roadmap</div><div class="comp-row-detail">Clear, prioritized action document sealed under BAD quality governance before delivery</div></div><div class="comp-row-cost">Day 4&ndash;5</div></div>
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Governance &amp; QA</div><div class="comp-row-detail">Multi-stage verification confirms completeness. Full reasoning chain logged.</div></div><div class="comp-row-cost">Day 5</div></div>
           </div>
-          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Single operator. Fully governed.</div><div class="comp-total-time">5&ndash;7 Days</div></div><div class="comp-total-figure">~$2,500</div></div>
+          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Single operator. Fully governed.</div><div class="comp-total-time">5&ndash;7 Days</div></div><div class="comp-total-figure">$3,500</div></div>
         </div>
       </div>
       <div class="comp-saving-wrap"><div class="comp-saving">
-        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">~$9,875</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
-        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">84&ndash;90%</div><div class="comp-saving-sub">budget reduction</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">$8,875</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">72%</div><div class="comp-saving-sub">budget reduction</div></div>
         <div class="comp-saving-cell"><div class="comp-saving-label">Time Recovered</div><div class="comp-saving-value">2&ndash;4 Weeks</div><div class="comp-saving-sub">returned to production</div></div>
       </div></div>
     </div>
@@ -521,12 +626,12 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Investor Packaging</div><div class="comp-row-detail">Investor-ready financial documentation is a native output of the same build. No separate designer engagement</div></div><div class="comp-row-cost">Day 5&ndash;7</div></div>
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Governance &amp; QA</div><div class="comp-row-detail">All cost assumptions and judgment calls logged with full audit trail</div></div><div class="comp-row-cost">Day 7</div></div>
           </div>
-          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</div><div class="comp-total-time">7&ndash;10 Days</div></div><div class="comp-total-figure">~$5,000</div></div>
+          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</div><div class="comp-total-time">7&ndash;10 Days</div></div><div class="comp-total-figure">$5,000</div></div>
         </div>
       </div>
       <div class="comp-saving-wrap"><div class="comp-saving">
-        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">~$36,500</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
-        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">88&ndash;99%</div><div class="comp-saving-sub">budget reduction</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">$36,500</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">88%</div><div class="comp-saving-sub">budget reduction</div></div>
         <div class="comp-saving-cell"><div class="comp-saving-label">Time Recovered</div><div class="comp-saving-value">4&ndash;8 Weeks</div><div class="comp-saving-sub">returned to production</div></div>
       </div></div>
     </div>
@@ -560,12 +665,12 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Pitch Deck &amp; Docs</div><div class="comp-row-detail">Complete pitch deck and development documentation as a native deliverable &mdash; same operator, same build, no agency handoff</div></div><div class="comp-row-cost">Day 8&ndash;14</div></div>
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Governance &amp; QA</div><div class="comp-row-detail">All positioning assumptions stress-tested. Final package cleared. Every decision logged.</div></div><div class="comp-row-cost">Day 12&ndash;14</div></div>
           </div>
-          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; One build. One operator. No siloed consultants.</div><div class="comp-total-time">2&ndash;3 Weeks</div></div><div class="comp-total-figure">~$8,000</div></div>
+          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; One build. One operator. No siloed consultants.</div><div class="comp-total-time">2&ndash;3 Weeks</div></div><div class="comp-total-figure">$8,500</div></div>
         </div>
       </div>
       <div class="comp-saving-wrap"><div class="comp-saving">
-        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">~$56,250</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
-        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">87&ndash;88%</div><div class="comp-saving-sub">budget reduction</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">$55,750</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">87%</div><div class="comp-saving-sub">budget reduction</div></div>
         <div class="comp-saving-cell"><div class="comp-saving-label">Time Recovered</div><div class="comp-saving-value">3&ndash;5 Months</div><div class="comp-saving-sub">returned to production</div></div>
       </div></div>
     </div>
@@ -587,60 +692,154 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
 
 <section id="pricing">
   <div class="pricing-inner">
-    <div class="pricing-badge"><div class="pricing-badge-dot"></div><span class="pricing-badge-text">Now Accepting Founding Clients</span></div>
-    <h2 class="pricing-headline">Founding Client<br>Rates</h2>
-    <p class="pricing-sub">Real numbers. No discovery call required to know if we&rsquo;re in your range. These rates will not be offered again after the first 3&ndash;5 engagements.</p>
-    <div class="scarcity-bar">
-      <div class="scarcity-label">Founding Client Spots</div>
-      <div class="scarcity-track">
-        <div class="scarcity-pip filled" title="Michelle"></div>
-        <div class="scarcity-pip filled" title="Chris Taylor / Nola Cart Co."></div>
-        <div class="scarcity-pip"></div>
-        <div class="scarcity-pip"></div>
-        <div class="scarcity-pip"></div>
-      </div>
-      <div class="scarcity-count">2 of 5 spots filled &mdash; <span class="scarcity-remain">3 remaining</span></div>
+    <div class="pricing-badge"><div class="pricing-badge-dot"></div><span class="pricing-badge-text">Now Accepting Founding Clients &mdash; 3 Spots Remaining</span></div>
+    <h2 class="pricing-headline">Service Pricing</h2>
+    <p class="pricing-sub">Every engagement is direct access to principal. No account managers. No overhead. No discovery call required to know if we&rsquo;re in your range.</p>
+
+    <div class="tier-tabs">
+      <button class="tier-tab active" data-tier="t01">Foundation</button>
+      <button class="tier-tab" data-tier="t02">Emerging Creator</button>
+      <button class="tier-tab" data-tier="t03">Professional</button>
+      <button class="tier-tab" data-tier="t04">Creative Partnership</button>
     </div>
 
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-card-label">// Service 01</div>
-        <div class="pricing-card-name">Script Analysis</div>
-        <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$350</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$500</span></div>
-        <div class="pricing-note">Founding client rate &middot; Limited availability</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-includes">Structural diagnosis, production feasibility flags, budget impact per scene, and a clear revision roadmap &mdash; delivered fast.</div>
+    <!-- FOUNDATION -->
+    <div class="tier-panel active" id="t01">
+      <div class="tier-panel-header">
+        <div class="tier-panel-eyebrow">Tier 01 &mdash; Foundation</div>
+        <div class="tier-panel-title">The First Five</div>
+        <div class="tier-panel-desc">Time-limited. Closes permanently after 5 clients. Never reopens. Rates lock in for the life of the relationship through Year 3. The lowest price point this work will ever be available at. Foundation covers the three core services only.</div>
+        <div class="scarcity-bar">
+          <div class="scarcity-label">Founding Spots</div>
+          <div class="scarcity-track">
+            <div class="scarcity-pip filled" title="Michelle"></div>
+            <div class="scarcity-pip filled" title="Chris Taylor / Nola Cart Co."></div>
+            <div class="scarcity-pip"></div>
+            <div class="scarcity-pip"></div>
+            <div class="scarcity-pip"></div>
+          </div>
+          <div class="scarcity-count">2 of 5 spots filled &mdash; <span class="scarcity-remain">3 remaining</span></div>
+        </div>
       </div>
-      <div class="pricing-card">
-        <div class="pricing-card-label">// Service 02</div>
-        <div class="pricing-card-name">Budget Architecture</div>
-        <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$500</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$750</span></div>
-        <div class="pricing-note">Founding client rate &middot; Limited availability</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-includes">Line-item budgets built for your actual reality. Non-profit and grant-aligned structuring. Investor-ready packaging included.</div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card-label">// Analysis</div>
+          <div class="pricing-card-name">Script Coverage</div>
+          <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$350</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$500</span></div>
+          <div class="pricing-note">Year 1 rate &middot; Auto step-up at 12 months</div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-includes">Structural narrative diagnosis, production feasibility flags before you spend a dollar, budget impact per scene, and a clear revision roadmap.</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-label">// Build</div>
+          <div class="pricing-card-name">Budget Architecture</div>
+          <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$500</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$750</span></div>
+          <div class="pricing-note">Year 1 rate &middot; Auto step-up at 12 months</div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-includes">Line-item budgets built for your actual reality. Non-profit and grant-aligned structuring. Investor-ready packaging included.</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-label">// Strategy</div>
+          <div class="pricing-card-name">Strategic Development</div>
+          <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$1,200</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$1,500</span></div>
+          <div class="pricing-note">Year 1 rate &middot; Auto step-up at 12 months</div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-includes">Funding strategy, distribution pathway planning, pitch documentation, and institutional outreach framework &mdash; full stack.</div>
+        </div>
       </div>
-      <div class="pricing-card">
-        <div class="pricing-card-label">// Service 03</div>
-        <div class="pricing-card-name">Strategic Development</div>
-        <div class="pricing-range"><span class="pricing-from">from</span><span class="pricing-num">$1,200</span><span class="pricing-to">&mdash;</span><span class="pricing-num-end">$1,500</span></div>
-        <div class="pricing-note">Founding client rate &middot; Limited availability</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-includes">Funding strategy, distribution pathway planning, pitch documentation, and institutional outreach framework &mdash; full stack.</div>
+      <div class="bundle-row">
+        <div class="bundle-left">
+          <div class="bundle-tag">// Foundation Bundle &mdash; Flat Rate All Three Years</div>
+          <div class="bundle-name">Script Coverage + Budget Architecture + Strategic Development</div>
+          <div class="bundle-desc">The complete Beautiful Anarchy Designs core engagement in one. All three Foundation services delivered start to finish. Bundle price is flat across Years 1&ndash;3 &mdash; already at ceiling.</div>
+        </div>
+        <div class="bundle-price-block">
+          <div class="bundle-price">$1,800</div>
+          <div class="bundle-savings">Saves you ~$500 vs. individual rates</div>
+        </div>
+        <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="bundle-cta">Claim This Rate</a>
       </div>
     </div>
-    <div class="bundle-row">
-      <div class="bundle-left">
-        <div class="bundle-tag">// Full Engagement Bundle</div>
-        <div class="bundle-name">All Three Services</div>
-        <div class="bundle-desc">The complete BAD experience in one engagement. Script analysis, budget architecture, and strategic development &mdash; start to finish.</div>
+
+    <!-- EMERGING CREATOR -->
+    <div class="tier-panel" id="t02">
+      <div class="tier-panel-header">
+        <div class="tier-panel-eyebrow">Tier 02 &mdash; Emerging Creator</div>
+        <div class="tier-panel-title">Independent. Developing. Ready.</div>
+        <div class="tier-panel-desc">For independent filmmakers, emerging playwrights, and nonprofit arts organizations scaling their first major production. Individual products only. 72-hour delivery standard. No bundle &mdash; the work speaks for itself at this level.</div>
       </div>
-      <div class="bundle-price-block">
-        <div class="bundle-price">$1,800</div>
-        <div class="bundle-savings">Saves you ~$500 vs. individual rates</div>
+      <div class="tier-price-grid">
+        <div class="tier-price-row"><div class="tpr-category">Analysis</div><div class="tpr-name">Script Coverage</div><div class="tpr-delivery">72 hours</div><div class="tpr-price">$1,200</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Analysis</div><div class="tpr-name">Production Audit</div><div class="tpr-delivery">72 hours</div><div class="tpr-price">$1,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Budget Architecture</div><div class="tpr-delivery">72 hours</div><div class="tpr-price">$1,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Full Production Binder &mdash; Theater</div><div class="tpr-delivery">5 business days</div><div class="tpr-price">$2,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Full Production Binder &mdash; Film</div><div class="tpr-delivery">5 business days</div><div class="tpr-price">$3,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Pre-Visualization Suite</div><div class="tpr-delivery">72 hours</div><div class="tpr-price">$500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Pre-Pitch Sprint</div><div class="tpr-delivery">72 hours</div><div class="tpr-price">$2,000</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Strategy</div><div class="tpr-name">Strategic Development</div><div class="tpr-delivery">72 hours</div><div class="tpr-price">$2,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Strategy</div><div class="tpr-name">Pitch Preparation</div><div class="tpr-delivery">72 hours</div><div class="tpr-price">$1,200</div></div>
       </div>
-      <a href="#" class="bundle-cta email-link" data-label="1">Claim This Rate</a>
+      <div class="tier-cta-row">
+        <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="bundle-cta">Start a Conversation</a>
+        <div class="tier-cta-note">Adaptation Feasibility, Market Positioning Read, and Distribution Roadmap require Professional tier or above.</div>
+      </div>
     </div>
-    <div class="pricing-disclaimer">Founding client rates are time-limited and will not be offered again after the first 3&ndash;5 engagements. &nbsp;&middot;&nbsp; Direct access to principal on every project. &nbsp;&middot;&nbsp; Faster turnaround than industry standard. &nbsp;&middot;&nbsp; Retainer options available after first engagement.</div>
+
+    <!-- PROFESSIONAL -->
+    <div class="tier-panel" id="t03">
+      <div class="tier-panel-header">
+        <div class="tier-panel-eyebrow">Tier 03 &mdash; Professional</div>
+        <div class="tier-panel-title">Full Suite. 48 Hours.</div>
+        <div class="tier-panel-desc">For established production companies, funded nonprofits, regional theater organizations, and corporate creative departments. Full analysis and build suite unlocks. 48-hour delivery standard. Client-facing governance summary included with every engagement.</div>
+      </div>
+      <div class="tier-price-grid">
+        <div class="tier-price-row"><div class="tpr-category">Analysis</div><div class="tpr-name">Script Coverage</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$3,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Analysis</div><div class="tpr-name">Production Audit</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$4,000</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Analysis</div><div class="tpr-name">Adaptation Feasibility</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$5,000</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Analysis</div><div class="tpr-name">Market Positioning Read</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$5,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Budget Architecture</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$5,000</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Full Production Binder &mdash; Theater</div><div class="tpr-delivery">5 business days</div><div class="tpr-price">$7,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Full Production Binder &mdash; Film</div><div class="tpr-delivery">5 business days</div><div class="tpr-price">$12,000</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Pre-Visualization Suite</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$3,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Build</div><div class="tpr-name">Pre-Pitch Sprint</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$5,000</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Strategy</div><div class="tpr-name">Strategic Development</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$8,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Strategy</div><div class="tpr-name">Distribution Roadmap</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$8,500</div></div>
+        <div class="tier-price-row"><div class="tpr-category">Strategy</div><div class="tpr-name">Pitch Preparation</div><div class="tpr-delivery">48 hours</div><div class="tpr-price">$3,500</div></div>
+      </div>
+      <div class="tier-cta-row">
+        <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="bundle-cta">Start a Conversation</a>
+        <div class="tier-cta-note">Institutional tier available by referral only. Retainer options available after first engagement.</div>
+      </div>
+    </div>
+
+    <!-- CREATIVE PARTNERSHIP -->
+    <div class="tier-panel" id="t04">
+      <div class="tier-panel-header">
+        <div class="tier-panel-eyebrow">Creative Partnership Track</div>
+        <div class="tier-panel-title">A Bridge for Artists.</div>
+        <div class="tier-panel-desc">Beautiful Anarchy Designs was built to create a bridge that allows more artists to be seen. The Creative Partnership Track is not a discount &mdash; it is a deferred compensation model. You pay the Foundation rate floor. Beautiful Anarchy Designs takes a backend participation in your project. Both sides have skin in the game.</div>
+      </div>
+      <div class="cp-structure">
+        <div class="cp-col">
+          <div class="cp-col-label">What You Pay Upfront</div>
+          <div class="cp-row"><div class="cp-row-rule"></div><div class="cp-row-body"><div class="cp-row-name">Script Coverage</div><div class="cp-row-detail">Foundation floor &mdash; $350 to $500</div></div></div>
+          <div class="cp-row"><div class="cp-row-rule"></div><div class="cp-row-body"><div class="cp-row-name">Full Production Binder</div><div class="cp-row-detail">Foundation floor &mdash; $1,200 to $1,500</div></div></div>
+          <div class="cp-note">Floor payment is non-refundable once work begins. No further cash obligation beyond the floor.</div>
+        </div>
+        <div class="cp-col">
+          <div class="cp-col-label">What Beautiful Anarchy Designs Takes on the Backend</div>
+          <div class="cp-row"><div class="cp-row-rule"></div><div class="cp-row-body"><div class="cp-row-name">Script Coverage</div><div class="cp-row-detail">3% of net profits &mdash; or 2% IP interest, negotiated and agreed between both parties</div></div></div>
+          <div class="cp-row"><div class="cp-row-rule"></div><div class="cp-row-body"><div class="cp-row-name">Full Production Binder</div><div class="cp-row-detail">5% of net profits &mdash; or 3% IP interest, negotiated and agreed between both parties</div></div></div>
+          <div class="cp-note">Net profit participation or IP interest &mdash; never both simultaneously. The form of participation is agreed between both parties prior to execution. A signed agreement is required before work begins.</div>
+        </div>
+      </div>
+      <div class="tier-cta-row">
+        <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="bundle-cta">Let&rsquo;s Talk</a>
+        <div class="tier-cta-note">Creative Partnership is available for Script Coverage and Full Production Binder only. Strategic Development and Pre-Visualization Suite require standard rate engagement. A signed agreement is required before work begins.</div>
+      </div>
+    </div>
+
+    <div class="pricing-disclaimer">All rates are per-project. Direct access to principal on every engagement. &nbsp;&middot;&nbsp; Founding tier closes permanently at 5 clients. &nbsp;&middot;&nbsp; Institutional tier available by referral only. &nbsp;&middot;&nbsp; Retainer options available after first engagement. &nbsp;&middot;&nbsp; Creative Partnership requires executed agreement prior to commencement.</div>
   </div>
 </section>
 
@@ -742,14 +941,14 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   <div class="cta-inner">
     <h2 class="cta-headline">Ready to Build<br>Something Real?</h2>
     <p class="cta-sub">Let&rsquo;s talk about your project. No obligation. No pitch deck. Just a real conversation.</p>
-    <a href="#" class="btn-dark email-link" data-label="1"><span></span></a>
+    <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="btn-dark">BeautifulAnarchyDesigns@gmail.com</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-brand">Beautiful Anarchy Designs</div>
-  <div class="footer-tagline">We are the beauty in chaos.</div>
-  <a href="#" class="footer-contact email-link" data-label="1"><span></span></a>
+  <div class="footer-tagline">We are the Beauty, in Chaos.</div>
+  <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="footer-contact">BeautifulAnarchyDesigns@gmail.com</a>
 </footer>
 
 <script>
@@ -761,7 +960,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.proof-item, .service-card, .claim-pillar, .pricing-card, .bundle-row, .case-card').forEach(el => observer.observe(el));
+  document.querySelectorAll('.proof-item, .service-card, .claim-pillar, .pricing-card, .bundle-row, .case-card, .cp-row').forEach(el => observer.observe(el));
 
   // Comparison tabs
   document.querySelectorAll('.comp-tab').forEach(function(tab){
@@ -773,18 +972,28 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     });
   });
 
-  // Email obfuscation
-  (function(){
-    var u='BeautifulAnarchyDesigns';
-    var d='gmail.com';
-    var e=u+'@'+d;
-    document.querySelectorAll('.email-link').forEach(function(el){
-      el.href='mailto:'+e;
-      var sp=el.querySelector('span');
-      if(sp) sp.textContent=e;
-      else if(el.dataset.label==='1' && el.textContent.trim()==='') el.textContent=e;
+  // Pricing tier tabs
+  document.querySelectorAll('.tier-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.tier-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var tier = tab.dataset.tier;
+      ['founding','emerging','professional','institutional'].forEach(function(t){
+        document.getElementById('pricing-'+t).style.display = t===tier ? 'grid' : 'none';
+        document.getElementById('tier-'+t).style.display = t===tier ? 'block' : 'none';
+      });
     });
-  })();
+  });
+
+  // Tier tabs (pricing)
+  document.querySelectorAll('.tier-tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('.tier-tab').forEach(function(t){t.classList.remove('active');});
+      document.querySelectorAll('.tier-panel').forEach(function(p){p.classList.remove('active');});
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tier).classList.add('active');
+    });
+  });
 </script>
 </body>
 </html>
