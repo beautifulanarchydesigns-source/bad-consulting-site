@@ -52,7 +52,7 @@ nav a:hover{color:var(--gold);}
 .section-label{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5.5rem);line-height:0.9;color:var(--white);}
 .section-rule{flex:1;height:1px;background:rgba(201,168,76,0.2);}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(201,168,76,0.15);}.service-card:nth-child(3){border-right:none;}.service-card:nth-child(4){border-top:1px solid rgba(201,168,76,0.12);}.service-card:nth-child(5){border-top:1px solid rgba(201,168,76,0.12);border-right:none;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(201,168,76,0.15);}
 .service-card{padding:3.5rem 2.5rem;border-right:1px solid rgba(201,168,76,0.12);position:relative;overflow:hidden;opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .service-card:last-child{border-right:none;}
 .service-card.visible{opacity:1;transform:none;}
@@ -312,68 +312,70 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   .comp-saving-cell+.comp-saving-cell{border-left:none;border-top:1px solid rgba(255,255,255,0.05);}
 }
 
-/* ── PRICING TIER TABS ───────────────────────────────────────────────────── */
-.tier-tabs{display:flex;gap:0;border-bottom:1px solid rgba(201,168,76,0.2);margin-bottom:2rem;overflow-x:auto;}
-.tier-tab{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);padding:1rem 2rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;background:none;white-space:nowrap;}
-.tier-tab:hover{color:rgba(240,237,230,0.65);}
-.tier-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.tier-descriptor{margin-bottom:2.5rem;}
-.tier-desc-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.5rem;}
-.tier-desc-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(240,237,230,0.45);line-height:1.6;max-width:640px;}
-/* 5-card grid: 3 top row, 2 bottom centered */
-#pricing .pricing-grid{grid-template-columns:repeat(3,1fr);}
-/* ── CREATIVE PARTNERSHIP ROW ────────────────────────────────────────────── */
-.cp-row{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.3);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;margin-top:1px;flex-wrap:wrap;}
-.cp-left{flex:1;min-width:280px;}
-.cp-tag{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
-.cp-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin-bottom:0.8rem;}
-.cp-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(240,237,230,0.5);line-height:1.6;margin-bottom:0.8rem;max-width:480px;}
-.cp-note{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,168,76,0.5);}
-.cp-right{text-align:center;flex-shrink:0;}
-.cp-floor-label{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);margin-bottom:0.2rem;}
-.cp-floor{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:1rem;}
-.cp-equity-label{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);margin-bottom:0.2rem;}
-.cp-equity{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:rgba(201,168,76,0.7);line-height:1;}
-.cp-equity-sub{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.2);margin-top:0.2rem;}
-@media(max-width:900px){
-  .cp-row{flex-direction:column;align-items:flex-start;padding:2rem;}
-  .cp-right{text-align:left;}
-  .tier-tabs{margin-bottom:1.5rem;}
-}
-
-/* ── PRICING TIER LADDER ─────────────────────────────────────────────────── */
-.pricing-section-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;margin-top:4rem;display:block;}
-.tier-ladder{display:flex;flex-direction:column;gap:0;border:1px solid rgba(201,168,76,0.15);margin-bottom:0;}
-.tier-item{display:flex;align-items:center;gap:2rem;padding:1.4rem 2rem;border-bottom:1px solid rgba(201,168,76,0.08);transition:background 0.2s;}
-.tier-item:last-child{border-bottom:none;}
-.tier-item.active{background:rgba(201,168,76,0.05);}
-.tier-marker{flex-shrink:0;}
-.tier-dot{width:12px;height:12px;border:1px solid rgba(201,168,76,0.35);display:block;}
-.tier-dot.filled{background:var(--gold);border-color:var(--gold);}
-.tier-body{flex:1;}
-.tier-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);line-height:1;margin-bottom:0.2rem;}
-.tier-item.active .tier-name{color:var(--gold);}
-.tier-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:rgba(240,237,230,0.4);line-height:1.4;}
-.tier-status{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;flex-shrink:0;}
-.tier-status.open{color:rgba(240,237,230,0.55);}
-.tier-status.gated{color:rgba(240,237,230,0.2);border:1px solid rgba(240,237,230,0.1);padding:0.3rem 0.7rem;}
-.tier-remain{color:var(--gold);}
-/* PRICING GRID — 5 cards, wrap to 3+2 */
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.12);margin-bottom:1px;}
-/* CREATIVE PARTNERSHIP NOTICE */
-.cp-notice{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-left:3px solid var(--gold);padding:1.8rem 2.5rem;margin-top:1px;margin-bottom:0;}
-.cp-notice-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
-.cp-notice-body{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(240,237,230,0.6);line-height:1.6;}
-.cp-link{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);}
-.cp-link:hover{border-bottom-color:var(--gold);}
-@media(max-width:900px){
-  .tier-item{flex-wrap:wrap;gap:1rem;padding:1.2rem 1.5rem;}
-  .tier-status{width:100%;}
-  .pricing-grid{grid-template-columns:1fr;}
-  .cp-notice{padding:1.5rem;}
-}
-
-/* ── TIER TABS (PRICING) ─────────────────────────────────────────────────── */
+/* ── COMPARISON SECTION ─────────────────────────────────────────────────── */
+#comparison{padding:8rem 3rem;background:var(--black);border-bottom:1px solid rgba(201,168,76,0.1);}
+.comparison-inner{max-width:1400px;margin:0 auto;}
+.comp-intro{font-size:1.1rem;font-style:italic;font-weight:300;line-height:1.7;color:rgba(240,237,230,0.55);max-width:640px;margin-bottom:3.5rem;}
+.comp-tabs{display:flex;border-bottom:1px solid rgba(201,168,76,0.2);margin-bottom:4rem;overflow-x:auto;}
+.comp-tab{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);padding:1rem 2rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;background:none;white-space:nowrap;}
+.comp-tab:hover{color:rgba(240,237,230,0.65);}
+.comp-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.comp-panel{display:none;}
+.comp-panel.active{display:block;}
+.comp-product-eyebrow{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.comp-product-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--white);line-height:1;margin-bottom:0.6rem;}
+.comp-product-desc{font-size:1rem;font-style:italic;font-weight:300;color:rgba(240,237,230,0.45);line-height:1.6;margin-bottom:2.5rem;max-width:560px;}
+.comp-columns{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.15);margin-bottom:0;}
+.comp-col{background:var(--black);padding:2.5rem;}
+.comp-col-head{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+.comp-col-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;display:block;margin-bottom:0.25rem;}
+.comp-col-label.ind{color:rgba(200,90,90,0.8);}
+.comp-col-label.bad{color:var(--gold);}
+.comp-col-sub{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.18);}
+.comp-rows{display:flex;flex-direction:column;}
+.comp-row{display:flex;align-items:flex-start;gap:1rem;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.comp-row:last-child{border-bottom:none;}
+.comp-row-rule{width:16px;height:1px;background:rgba(201,168,76,0.4);flex-shrink:0;margin-top:0.6rem;}
+.comp-row-rule.red{background:rgba(200,90,90,0.4);}
+.comp-row-body{flex:1;min-width:0;}
+.comp-row-name{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.55);}
+.comp-row-detail{font-size:0.85rem;font-style:italic;color:rgba(240,237,230,0.35);margin-top:0.15rem;line-height:1.4;}
+.comp-row-cost{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.08em;color:rgba(240,237,230,0.3);flex-shrink:0;text-align:right;white-space:nowrap;}
+.comp-total-row{display:flex;justify-content:space-between;align-items:flex-end;padding:1rem 0 0;margin-top:0.5rem;border-top:1px solid rgba(200,90,90,0.25);}
+.comp-total-row.bad-total{border-top-color:rgba(76,175,80,0.3);}
+.comp-total-label{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(200,90,90,0.7);}
+.comp-total-row.bad-total .comp-total-label{color:rgba(100,200,105,0.8);}
+.comp-total-time{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:rgba(200,90,90,0.7);}
+.comp-total-row.bad-total .comp-total-time{color:rgba(100,200,105,0.85);}
+.comp-total-figure{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;line-height:1;color:rgba(200,90,90,0.85);}
+.comp-total-row.bad-total .comp-total-figure{color:rgba(100,200,105,0.9);}
+.comp-saving-wrap{border:1px solid rgba(76,175,80,0.2);border-top:none;}
+.comp-saving{display:grid;grid-template-columns:repeat(3,1fr);background:rgba(10,20,10,0.9);border-left:3px solid rgba(76,175,80,0.5);}
+.comp-saving-cell{padding:1.5rem 2rem;}
+.comp-saving-cell+.comp-saving-cell{border-left:1px solid rgba(255,255,255,0.05);}
+.comp-saving-label{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(76,175,80,0.6);margin-bottom:0.35rem;}
+.comp-saving-value{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:rgba(110,210,115,0.9);line-height:1;margin-bottom:0.15rem;}
+.comp-saving-sub{font-family:'DM Mono',monospace;font-size:0.37rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.2);}
+/* ── SPEED CALLOUT ───────────────────────────────────────────────────────── */
+#speed-callout{background:var(--mid);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);padding:4rem 3rem;}
+.speed-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto 2fr;gap:4rem;align-items:center;}
+.speed-eyebrow{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem;}
+.speed-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.05;color:var(--white);}
+.speed-headline em{color:var(--gold);font-style:normal;}
+.speed-divider{width:1px;background:rgba(201,168,76,0.2);align-self:stretch;}
+.speed-right{display:flex;flex-direction:column;gap:1.5rem;}
+.speed-stat{display:flex;align-items:baseline;gap:1.5rem;}
+.speed-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold);line-height:1;min-width:90px;flex-shrink:0;}
+.speed-stat-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(240,237,230,0.5);line-height:1.5;}
+/* ── SCARCITY ────────────────────────────────────────────────────────────── */
+.scarcity-bar{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem;padding:1.2rem 1.8rem;border:1px solid rgba(201,168,76,0.2);background:rgba(201,168,76,0.04);flex-wrap:wrap;}
+.scarcity-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,237,230,0.35);}
+.scarcity-track{display:flex;gap:0.5rem;align-items:center;}
+.scarcity-pip{width:18px;height:18px;border:1px solid rgba(201,168,76,0.35);background:transparent;}
+.scarcity-pip.filled{background:var(--gold);border-color:var(--gold);}
+.scarcity-count{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,230,0.3);}
+.scarcity-remain{color:var(--gold);}
+/* ── TIER TABS ───────────────────────────────────────────────────────────── */
 .tier-tabs{display:flex;border-bottom:1px solid rgba(201,168,76,0.2);margin-bottom:4rem;overflow-x:auto;gap:0;}
 .tier-tab{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);padding:1rem 2rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;background:none;white-space:nowrap;}
 .tier-tab:hover{color:rgba(240,237,230,0.65);}
@@ -384,7 +386,6 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
 .tier-panel-eyebrow{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
 .tier-panel-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--white);line-height:1;margin-bottom:0.8rem;}
 .tier-panel-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(240,237,230,0.5);max-width:680px;line-height:1.7;margin-bottom:2rem;}
-/* TIER PRICE GRID */
 .tier-price-grid{display:flex;flex-direction:column;border:1px solid rgba(201,168,76,0.12);margin-bottom:2rem;}
 .tier-price-row{display:grid;grid-template-columns:100px 1fr 140px 120px;gap:0;padding:0.9rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.04);align-items:center;}
 .tier-price-row:last-child{border-bottom:none;}
@@ -395,7 +396,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
 .tpr-price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);text-align:right;line-height:1;}
 .tier-cta-row{display:flex;align-items:center;gap:2rem;margin-top:2rem;flex-wrap:wrap;}
 .tier-cta-note{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.25);max-width:520px;line-height:1.7;}
-/* CREATIVE PARTNERSHIP */
+/* ── CREATIVE PARTNERSHIP ────────────────────────────────────────────────── */
 .cp-structure{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.12);margin-bottom:2rem;}
 .cp-col{background:var(--black);padding:2.5rem;}
 .cp-col-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(201,168,76,0.15);}
@@ -406,13 +407,115 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
 .cp-row-name{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.6);}
 .cp-row-detail{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:rgba(240,237,230,0.4);margin-top:0.2rem;line-height:1.4;}
 .cp-note{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.2);margin-top:1.5rem;line-height:1.7;}
-.pricing-section-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+/* ── WEB DESIGN SECTION v1.4 ─────────────────────────────────────────────── */
+#web-design{padding:8rem 3rem;background:var(--mid);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);}
+.web-inner{max-width:1400px;margin:0 auto;}
+.web-own-bar{display:flex;align-items:flex-start;gap:2rem;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.25);border-left:4px solid var(--gold);padding:2rem 2.5rem;margin-bottom:3rem;}
+.web-own-icon{font-size:1.8rem;color:var(--gold);flex-shrink:0;line-height:1;margin-top:0.2rem;}
+.web-own-headline{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);line-height:1;margin-bottom:0.6rem;}
+.web-own-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(240,237,230,0.55);line-height:1.7;}
+.web-intro{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;font-weight:300;color:rgba(240,237,230,0.5);max-width:680px;line-height:1.7;margin-bottom:3rem;}
+.web-tier-tabs{display:flex;border-bottom:1px solid rgba(201,168,76,0.2);margin-bottom:3rem;overflow-x:auto;}
+.web-tab{font-family:'DM Mono',monospace;font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,230,0.3);padding:1rem 2rem;cursor:pointer;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s;background:none;white-space:nowrap;}
+.web-tab:hover{color:rgba(240,237,230,0.65);}
+.web-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.web-panel{display:none;}
+.web-panel.active{display:block;}
+.web-panel-eyebrow{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.web-panel-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(240,237,230,0.5);max-width:700px;line-height:1.7;margin-bottom:2rem;}
+.web-phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.12);margin-bottom:3rem;}
+.web-phase-col{background:var(--mid);padding:2rem;transition:background 0.2s;}
+.web-phase-col:hover{background:rgba(201,168,76,0.04);}
+.web-phase-current{background:rgba(201,168,76,0.06);}
+.web-phase-label{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);line-height:1;margin-bottom:0.3rem;}
+.web-phase-context{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.22);margin-bottom:1rem;}
+.web-phase-price{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1;margin-bottom:0.3rem;}
+.web-phase-rate{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.2);}
+.web-update-menu{background:var(--black);border:1px solid rgba(201,168,76,0.12);padding:2.5rem;margin-bottom:1px;}
+.web-update-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.web-update-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:rgba(240,237,230,0.4);margin-bottom:1.5rem;}
+.web-update-grid{display:flex;flex-direction:column;border-top:1px solid rgba(201,168,76,0.08);}
+.web-update-row{display:grid;grid-template-columns:100px 130px 1fr 80px;align-items:center;padding:0.7rem 0;border-bottom:1px solid rgba(255,255,255,0.04);gap:1rem;}
+.web-update-row:last-child{border-bottom:none;}
+.wur-tier{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.6);}
+.wur-time{font-family:'DM Mono',monospace;font-size:0.4rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,237,230,0.25);}
+.wur-examples{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:rgba(240,237,230,0.4);}
+.wur-price{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);text-align:right;}
+.web-update-note{font-family:'DM Mono',monospace;font-size:0.38rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,237,230,0.2);margin-top:1.2rem;line-height:1.7;}
+.web-addons{background:var(--black);border:1px solid rgba(201,168,76,0.12);border-top:none;padding:2.5rem;margin-bottom:2rem;}
+.web-addons-label{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.web-addons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.web-addon-item{display:flex;justify-content:space-between;align-items:baseline;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.web-addon-item:nth-last-child(-n+3){border-bottom:none;}
+.web-addon-name{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:rgba(240,237,230,0.6);}
+.web-addon-price{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.1em;color:var(--gold);white-space:nowrap;margin-left:1rem;}
+.web-cta-row{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+.web-cta-note{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,237,230,0.25);max-width:580px;line-height:1.7;}
+/* ── CONTACT SECTION ─────────────────────────────────────────────────────── */
+#contact{padding:8rem 3rem;background:var(--black);border-top:1px solid rgba(201,168,76,0.1);}
+.contact-inner{max-width:1400px;margin:0 auto;}
+.contact-intro{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;font-weight:300;color:rgba(240,237,230,0.55);max-width:600px;line-height:1.7;margin-bottom:4rem;}
+.contact-grid{display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start;}
+.contact-hidden{display:none;}
+.form-row{margin-bottom:1.8rem;}
+.form-row-split{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.form-group{display:flex;flex-direction:column;}
+.form-label{font-family:'DM Mono',monospace;font-size:0.45rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,237,230,0.4);margin-bottom:0.6rem;}
+.form-req{color:var(--gold);}
+.form-input{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--white);background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);padding:0.8rem 1rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;}
+.form-input:focus{border-color:rgba(201,168,76,0.6);}
+.form-input::placeholder{color:rgba(240,237,230,0.2);}
+.form-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C8A84B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;}
+.form-select option{background:var(--black);color:var(--white);}
+.form-textarea{min-height:120px;resize:vertical;line-height:1.6;}
+.form-checks{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;}
+.form-check{display:flex;align-items:center;gap:0.7rem;cursor:pointer;}
+.form-check input[type="checkbox"]{width:14px;height:14px;border:1px solid rgba(201,168,76,0.3);background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer;flex-shrink:0;position:relative;}
+.form-check input[type="checkbox"]:checked{background:var(--gold);border-color:var(--gold);}
+.form-check input[type="checkbox"]:checked::after{content:'';position:absolute;top:2px;left:4px;width:4px;height:7px;border:2px solid var(--black);border-top:none;border-left:none;transform:rotate(45deg);}
+.form-check span{font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,237,230,0.45);}
+.form-submit{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;background:var(--gold);color:var(--black);border:none;padding:1rem 3rem;cursor:pointer;transition:background 0.2s,transform 0.15s;width:100%;}
+.form-submit:hover{background:var(--white);transform:translateY(-2px);}
+.form-success{text-align:center;padding:3rem;border:1px solid rgba(201,168,76,0.3);}
+.form-success-icon{font-size:2.5rem;color:var(--gold);margin-bottom:1rem;}
+.form-success-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin-bottom:0.8rem;}
+.form-success-body{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(240,237,230,0.6);line-height:1.6;}
+.contact-info-col{display:flex;flex-direction:column;gap:0;border-left:1px solid rgba(201,168,76,0.15);padding-left:3rem;}
+.contact-info-block{padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.contact-info-block:last-of-type{border-bottom:none;}
+.contact-info-label{font-family:'DM Mono',monospace;font-size:0.42rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.contact-info-email{font-family:'DM Mono',monospace;font-size:0.5rem;letter-spacing:0.1em;color:rgba(240,237,230,0.7);text-decoration:none;transition:color 0.2s;}
+.contact-info-email:hover{color:var(--gold);}
+.contact-info-value{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(240,237,230,0.55);line-height:1.6;}
+.contact-tagline{margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,0.15);}
+.contact-tagline-main{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:rgba(201,168,76,0.5);letter-spacing:0.05em;}
 @media(max-width:900px){
+  #speed-callout{padding:3rem 1.5rem;}
+  .speed-inner{grid-template-columns:1fr;gap:2rem;}
+  .speed-divider{display:none;}
+  #comparison{padding:5rem 1.5rem;}
+  .comp-columns{grid-template-columns:1fr;}
+  .comp-saving{grid-template-columns:1fr;}
+  .comp-saving-cell+.comp-saving-cell{border-left:none;border-top:1px solid rgba(255,255,255,0.05);}
+  #web-design{padding:5rem 1.5rem;}
+  .web-own-bar{flex-direction:column;gap:1rem;}
+  .web-phase-grid{grid-template-columns:1fr;}
+  .web-addons-grid{grid-template-columns:1fr;}
+  .web-update-row{grid-template-columns:1fr 1fr;gap:0.5rem;}
+  .wur-time,.wur-examples{display:none;}
+  .web-cta-row{flex-direction:column;align-items:flex-start;}
   .tier-price-row{grid-template-columns:80px 1fr 100px;gap:0.5rem;}
   .tpr-delivery{display:none;}
   .cp-structure{grid-template-columns:1fr;}
   .tier-cta-row{flex-direction:column;align-items:flex-start;}
+  .scarcity-bar{gap:1rem;}
+  #contact{padding:5rem 1.5rem;}
+  .contact-grid{grid-template-columns:1fr;gap:3rem;}
+  .form-row-split{grid-template-columns:1fr;}
+  .form-checks{grid-template-columns:1fr;}
+  .contact-info-col{border-left:none;padding-left:0;border-top:1px solid rgba(201,168,76,0.15);padding-top:2rem;}
 }
+
 </style>
 </head>
 <body>
@@ -424,10 +527,12 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   <nav>
     <a href="#services">Services</a>
     <a href="#comparison">The Numbers</a>
+    <a href="#web-design">Web Design</a>
     <a href="#pricing">Pricing</a>
     <a href="#portfolio">Work</a>
     <a href="#audience">Who We Serve</a>
-    <a href="#cta" class="nav-cta">Engage BAD</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Engage BAD</a>
   </nav>
 </header>
 
@@ -498,6 +603,7 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
   </div>
 </div>
 
+
 <section id="services">
   <div class="section-header">
     <span class="section-label">// 01 &mdash; What We Do</span>
@@ -505,48 +611,67 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     <h2 class="section-title">The Work</h2>
   </div>
   <div class="services-grid">
-
     <div class="service-card">
       <span class="service-num">01</span>
       <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-      <h3 class="service-name">Analysis</h3>
-      <p class="service-body">We read your project with adversarial precision &mdash; pressure-testing narrative structure, production feasibility, market position, and adaptation viability before a single dollar moves.</p>
+      <h3 class="service-name">Script Analysis</h3>
+      <p class="service-body">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</p>
       <div class="service-detail">
-        <div class="service-detail-item">Script Coverage</div>
-        <div class="service-detail-item">Production Audit</div>
-        <div class="service-detail-item">Adaptation Feasibility</div>
-        <div class="service-detail-item">Market Positioning Read</div>
+        <div class="service-detail-item">Structural narrative diagnosis</div>
+        <div class="service-detail-item">Production feasibility flags before you spend a dollar</div>
+        <div class="service-detail-item">Budget impact assessment per scene</div>
+        <div class="service-detail-item">Clear, actionable revision roadmap</div>
       </div>
     </div>
-
     <div class="service-card">
       <span class="service-num">02</span>
       <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 12h6"/></svg></div>
-      <h3 class="service-name">Build</h3>
-      <p class="service-body">We produce what didn&rsquo;t exist before &mdash; budgets built for your reality, production binders that compete at investor level, visual architecture before a frame rolls, and pitch-ready documentation.</p>
+      <h3 class="service-name">Budget Architecture</h3>
+      <p class="service-body">Built for how independent and non-profit productions actually work &mdash; not the Hollywood model. Real numbers. Real constraints. Real paths to production.</p>
       <div class="service-detail">
-        <div class="service-detail-item">Budget Architecture</div>
-        <div class="service-detail-item">Full Production Binder &mdash; Film &amp; Theater</div>
-        <div class="service-detail-item">Pre-Visualization Suite</div>
-        <div class="service-detail-item">Pre-Pitch Sprint</div>
+        <div class="service-detail-item">Line-item budgets scaled to your reality</div>
+        <div class="service-detail-item">Non-profit &amp; grant-aligned budget structuring</div>
+        <div class="service-detail-item">Cost optimization without creative compromise</div>
+        <div class="service-detail-item">Investor-ready financial packaging</div>
       </div>
     </div>
-
     <div class="service-card">
       <span class="service-num">03</span>
       <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-      <h3 class="service-name">Strategy</h3>
-      <p class="service-body">We tell you how to move and where to go &mdash; funding strategy, distribution pathways, institutional partnerships, and pitch preparation that positions your project to compete and win.</p>
+      <h3 class="service-name">Strategic Development</h3>
+      <p class="service-body">Your story deserves to compete. We position your project for funding, distribution, and the institutional partnerships that turn vision into release.</p>
       <div class="service-detail">
-        <div class="service-detail-item">Strategic Development</div>
-        <div class="service-detail-item">Distribution Roadmap</div>
-        <div class="service-detail-item">Pitch Preparation</div>
+        <div class="service-detail-item">Funding strategy &amp; grant positioning</div>
+        <div class="service-detail-item">Distribution pathway planning</div>
+        <div class="service-detail-item">Institutional partnership outreach frameworks</div>
+        <div class="service-detail-item">Pitch deck &amp; development documentation</div>
       </div>
     </div>
-
   </div>
 </section>
-
+<div id="speed-callout">
+  <div class="speed-inner">
+    <div class="speed-left">
+      <span class="speed-eyebrow">// The Delivery Reality</span>
+      <div class="speed-headline">Industry standard:<br><em>3&ndash;6 weeks.</em><br>BAD standard:<br><em>Days.</em></div>
+    </div>
+    <div class="speed-divider"></div>
+    <div class="speed-right">
+      <div class="speed-stat">
+        <div class="speed-stat-num">Hours</div>
+        <div class="speed-stat-label">Core analysis engine &mdash; raw capability from script to full diagnostic</div>
+      </div>
+      <div class="speed-stat">
+        <div class="speed-stat-num">Days</div>
+        <div class="speed-stat-label">Full client-facing delivery window including revisions, QA, and governance seal</div>
+      </div>
+      <div class="speed-stat">
+        <div class="speed-stat-num">Weeks</div>
+        <div class="speed-stat-label">What the industry charges you to wait &mdash; across 5&ndash;8 billing relationships</div>
+      </div>
+    </div>
+  </div>
+</div>
 <section id="comparison">
   <div class="comparison-inner">
     <div class="section-header">
@@ -554,16 +679,16 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
       <div class="section-rule"></div>
       <h2 class="section-title">The Real Cost</h2>
     </div>
-    <p class="comp-intro">The industry model splits every service across five to eight separate billing relationships, weeks of scheduling, and siloed deliverables. Here is what that actually costs &mdash; and what Beautiful Anarchy Designs delivers instead at Professional tier rates.</p>
+    <p class="comp-intro">The industry model splits every service across five to eight separate billing relationships, weeks of scheduling, and siloed deliverables. Here is what that actually costs &mdash; and what BAD delivers instead.</p>
     <div class="comp-tabs">
-      <button class="comp-tab active" data-panel="p01">Script Coverage</button>
+      <button class="comp-tab active" data-panel="p01">Script Analysis</button>
       <button class="comp-tab" data-panel="p02">Budget Architecture</button>
       <button class="comp-tab" data-panel="p03">Strategic Development</button>
     </div>
 
     <div class="comp-panel active" id="p01">
       <div class="comp-product-eyebrow">Product 01</div>
-      <div class="comp-product-title">Script Coverage</div>
+      <div class="comp-product-title">Script Analysis</div>
       <div class="comp-product-desc">We don&rsquo;t just read your script &mdash; we pressure-test it. Narrative structure, character logic, tonal consistency, and production feasibility, all in one pass.</div>
       <div class="comp-columns">
         <div class="comp-col">
@@ -588,12 +713,12 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Revision Roadmap</div><div class="comp-row-detail">Clear, prioritized action document sealed under BAD quality governance before delivery</div></div><div class="comp-row-cost">Day 4&ndash;5</div></div>
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Governance &amp; QA</div><div class="comp-row-detail">Multi-stage verification confirms completeness. Full reasoning chain logged.</div></div><div class="comp-row-cost">Day 5</div></div>
           </div>
-          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Single operator. Fully governed.</div><div class="comp-total-time">5&ndash;7 Days</div></div><div class="comp-total-figure">$3,500</div></div>
+          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Single operator. Fully governed.</div><div class="comp-total-time">5&ndash;7 Days</div></div><div class="comp-total-figure">~$2,500</div></div>
         </div>
       </div>
       <div class="comp-saving-wrap"><div class="comp-saving">
-        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">$8,875</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
-        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">72%</div><div class="comp-saving-sub">budget reduction</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">~$9,875</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">84&ndash;90%</div><div class="comp-saving-sub">budget reduction</div></div>
         <div class="comp-saving-cell"><div class="comp-saving-label">Time Recovered</div><div class="comp-saving-value">2&ndash;4 Weeks</div><div class="comp-saving-sub">returned to production</div></div>
       </div></div>
     </div>
@@ -626,12 +751,12 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Investor Packaging</div><div class="comp-row-detail">Investor-ready financial documentation is a native output of the same build. No separate designer engagement</div></div><div class="comp-row-cost">Day 5&ndash;7</div></div>
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Governance &amp; QA</div><div class="comp-row-detail">All cost assumptions and judgment calls logged with full audit trail</div></div><div class="comp-row-cost">Day 7</div></div>
           </div>
-          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</div><div class="comp-total-time">7&ndash;10 Days</div></div><div class="comp-total-figure">$5,000</div></div>
+          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; Grant-ready and investor-ready simultaneously.</div><div class="comp-total-time">7&ndash;10 Days</div></div><div class="comp-total-figure">~$5,000</div></div>
         </div>
       </div>
       <div class="comp-saving-wrap"><div class="comp-saving">
-        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">$36,500</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
-        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">88%</div><div class="comp-saving-sub">budget reduction</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">~$36,500</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">88&ndash;99%</div><div class="comp-saving-sub">budget reduction</div></div>
         <div class="comp-saving-cell"><div class="comp-saving-label">Time Recovered</div><div class="comp-saving-value">4&ndash;8 Weeks</div><div class="comp-saving-sub">returned to production</div></div>
       </div></div>
     </div>
@@ -665,19 +790,18 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Pitch Deck &amp; Docs</div><div class="comp-row-detail">Complete pitch deck and development documentation as a native deliverable &mdash; same operator, same build, no agency handoff</div></div><div class="comp-row-cost">Day 8&ndash;14</div></div>
             <div class="comp-row"><div class="comp-row-rule"></div><div class="comp-row-body"><div class="comp-row-name">Governance &amp; QA</div><div class="comp-row-detail">All positioning assumptions stress-tested. Final package cleared. Every decision logged.</div></div><div class="comp-row-cost">Day 12&ndash;14</div></div>
           </div>
-          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; One build. One operator. No siloed consultants.</div><div class="comp-total-time">2&ndash;3 Weeks</div></div><div class="comp-total-figure">$8,500</div></div>
+          <div class="comp-total-row bad-total"><div><div class="comp-total-label">BAD Total &mdash; One build. One operator. No siloed consultants.</div><div class="comp-total-time">2&ndash;3 Weeks</div></div><div class="comp-total-figure">~$8,000</div></div>
         </div>
       </div>
       <div class="comp-saving-wrap"><div class="comp-saving">
-        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">$55,750</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
-        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">87%</div><div class="comp-saving-sub">budget reduction</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Cost Savings</div><div class="comp-saving-value">~$56,250</div><div class="comp-saving-sub">vs. industry staffing model</div></div>
+        <div class="comp-saving-cell"><div class="comp-saving-label">Efficiency Gain</div><div class="comp-saving-value">87&ndash;88%</div><div class="comp-saving-sub">budget reduction</div></div>
         <div class="comp-saving-cell"><div class="comp-saving-label">Time Recovered</div><div class="comp-saving-value">3&ndash;5 Months</div><div class="comp-saving-sub">returned to production</div></div>
       </div></div>
     </div>
 
   </div>
 </section>
-
 <section id="claim">
   <div class="claim-inner">
     <p class="claim-eyebrow">// The Standard We Hold Ourselves To</p>
@@ -689,7 +813,150 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     </div>
   </div>
 </section>
+<section id="web-design">
+  <div class="web-inner">
+    <div class="section-header">
+      <span class="section-label">// 03 &mdash; Web Design &amp; Development</span>
+      <div class="section-rule"></div>
+      <h2 class="section-title">Web Design.</h2>
+    </div>
 
+    <div class="web-own-bar">
+      <div class="web-own-icon">&#x2713;</div>
+      <div class="web-own-text">
+        <div class="web-own-headline">You own your site.</div>
+        <div class="web-own-sub">The hosting account, the source code, the domain &mdash; they transfer to you on final payment. No lock-in. No dependency. If you ever decide to move providers, take the site to a different developer, or just stop working with us, you can. We give you the keys because we believe trust closes deals &mdash; and because we believe you&rsquo;ll come back when you need updates, not because you have to, but because we built it and we know it best.</div>
+      </div>
+    </div>
+
+    <p class="web-intro">Full custom web design and development for small businesses, service operators, and creative organizations. Not templates. Not page builders. Designed to match your brand, built to run your operation.</p>
+
+    <div class="web-tier-tabs">
+      <button class="web-tab active" data-web="w01">Starter</button>
+      <button class="web-tab" data-web="w02">Business + Booking</button>
+      <button class="web-tab" data-web="w03">Flagship</button>
+    </div>
+
+    <!-- STARTER -->
+    <div class="web-panel active" id="w01">
+      <div class="web-panel-header">
+        <div class="web-panel-eyebrow">Tier 01 &mdash; Starter &middot; 4 hours</div>
+        <div class="web-panel-desc">3&ndash;5 page brochure site. Custom brand-matched design, mobile responsive, contact form, basic SEO, hosting setup, 2 revision rounds. NDA + SOW included. Best fit: solo operators, micro-businesses, professionals who need credibility online.</div>
+      </div>
+      <div class="web-phase-grid">
+        <div class="web-phase-col">
+          <div class="web-phase-label">Launch</div>
+          <div class="web-phase-context">First 3 documented wins</div>
+          <div class="web-phase-price">$1,000</div>
+          <div class="web-phase-rate">$250/hr effective</div>
+        </div>
+        <div class="web-phase-col">
+          <div class="web-phase-label">Standard</div>
+          <div class="web-phase-context">After track record established</div>
+          <div class="web-phase-price">$1,400</div>
+          <div class="web-phase-rate">$350/hr effective</div>
+        </div>
+        <div class="web-phase-col web-phase-current">
+          <div class="web-phase-label">Established</div>
+          <div class="web-phase-context">After first institutional client</div>
+          <div class="web-phase-price">$2,000</div>
+          <div class="web-phase-rate">$500/hr effective</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSINESS + BOOKING -->
+    <div class="web-panel" id="w02">
+      <div class="web-panel-header">
+        <div class="web-panel-eyebrow">Tier 02 &mdash; Business + Booking &middot; 6 hours</div>
+        <div class="web-panel-desc">5&ndash;8 page site with custom booking system or e-commerce. Calendar with deposit handling, email + SMS notifications, PIN-protected admin panel, PayPal/Stripe integration, competitor pricing analysis, client presentation PDF, 3 revision rounds. NDA + SOW included. Best fit: service businesses, tour operators, restaurants &mdash; anyone who takes bookings or sells.</div>
+      </div>
+      <div class="web-phase-grid">
+        <div class="web-phase-col">
+          <div class="web-phase-label">Launch</div>
+          <div class="web-phase-context">First 3 documented wins</div>
+          <div class="web-phase-price">$1,500</div>
+          <div class="web-phase-rate">$250/hr effective</div>
+        </div>
+        <div class="web-phase-col">
+          <div class="web-phase-label">Standard</div>
+          <div class="web-phase-context">After track record established</div>
+          <div class="web-phase-price">$2,100</div>
+          <div class="web-phase-rate">$350/hr effective</div>
+        </div>
+        <div class="web-phase-col web-phase-current">
+          <div class="web-phase-label">Established</div>
+          <div class="web-phase-context">After first institutional client</div>
+          <div class="web-phase-price">$3,000</div>
+          <div class="web-phase-rate">$500/hr effective</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLAGSHIP -->
+    <div class="web-panel" id="w03">
+      <div class="web-panel-header">
+        <div class="web-panel-eyebrow">Tier 03 &mdash; Flagship Custom Platform &middot; 14 hours</div>
+        <div class="web-panel-desc">8&ndash;15+ page custom platform. Full brand integration, multi-system architecture, multi-user admin, custom dashboards, advanced integrations, SMS/email funnels, full SEO, speed optimization, documentation, training, README.md deliverable, and 90-day post-launch support. Best fit: established small businesses scaling, multi-location operators, businesses replacing existing tech stacks.</div>
+      </div>
+      <div class="web-phase-grid">
+        <div class="web-phase-col">
+          <div class="web-phase-label">Launch</div>
+          <div class="web-phase-context">First 3 documented wins</div>
+          <div class="web-phase-price">$3,500</div>
+          <div class="web-phase-rate">$250/hr effective</div>
+        </div>
+        <div class="web-phase-col">
+          <div class="web-phase-label">Standard</div>
+          <div class="web-phase-context">After track record established</div>
+          <div class="web-phase-price">$4,900</div>
+          <div class="web-phase-rate">$350/hr effective</div>
+        </div>
+        <div class="web-phase-col web-phase-current">
+          <div class="web-phase-label">Established</div>
+          <div class="web-phase-context">After first institutional client</div>
+          <div class="web-phase-price">$7,000</div>
+          <div class="web-phase-rate">$500/hr effective</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="web-update-menu">
+      <div class="web-update-label">// Updates &amp; Ongoing Changes</div>
+      <div class="web-update-desc">When your business changes, your site should change with it. Request an update by email &mdash; we quote within one business day.</div>
+      <div class="web-update-grid">
+        <div class="web-update-row"><div class="wur-tier">Quick</div><div class="wur-time">&lt; 30 min</div><div class="wur-examples">Text edit, image swap, contact info</div><div class="wur-price">$75</div></div>
+        <div class="web-update-row"><div class="wur-tier">Standard</div><div class="wur-time">30&ndash;90 min</div><div class="wur-examples">New service, photo gallery refresh, simple form changes</div><div class="wur-price">$150</div></div>
+        <div class="web-update-row"><div class="wur-tier">Complex</div><div class="wur-time">90 min &ndash; 3 hrs</div><div class="wur-examples">New page or section, branding refresh, content restructure</div><div class="wur-price">$350</div></div>
+        <div class="web-update-row"><div class="wur-tier">Major</div><div class="wur-time">3+ hrs</div><div class="wur-examples">New feature, third-party integration, e-commerce add-on</div><div class="wur-price">$700+</div></div>
+      </div>
+      <div class="web-update-note">Same-day urgent (under 24 hours): add 50% on Quick and Standard tiers. Pre-pay 4+ updates: 15% bundle discount. Prices reflect Launch phase rates.</div>
+    </div>
+
+    <div class="web-addons">
+      <div class="web-addons-label">// Add-Ons &amp; Standalone Services &mdash; Launch Phase</div>
+      <div class="web-addons-grid">
+        <div class="web-addon-item"><span class="web-addon-name">Site Audit (standalone)</span><span class="web-addon-price">$350</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Competitor Pricing Analysis</span><span class="web-addon-price">$300</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Logo Design / Brand Mark</span><span class="web-addon-price">$400</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Color Palette + Brand System</span><span class="web-addon-price">$250</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Booking System Retrofit</span><span class="web-addon-price">$1,500</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Admin Panel Build-Out</span><span class="web-addon-price">$750</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Email + SMS Notification System</span><span class="web-addon-price">$350</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Payment Gateway Integration</span><span class="web-addon-price">$200</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">SEO Setup</span><span class="web-addon-price">$400</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Copywriting</span><span class="web-addon-price">$100/page</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Maintenance Retainer</span><span class="web-addon-price">$150/mo</span></div>
+        <div class="web-addon-item"><span class="web-addon-name">Hosting + Domain Setup</span><span class="web-addon-price">$150</span></div>
+      </div>
+    </div>
+
+    <div class="web-cta-row">
+      <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="bundle-cta">Start a Conversation</a>
+      <div class="web-cta-note">Pricing escalates milestone-by-milestone &mdash; not on a calendar. Phase 1 ends after 3 documented wins. You own the site outright on final payment. Direct access to principal on every project.</div>
+    </div>
+  </div>
+</section>
 <section id="pricing">
   <div class="pricing-inner">
     <div class="pricing-badge"><div class="pricing-badge-dot"></div><span class="pricing-badge-text">Now Accepting Founding Clients &mdash; 3 Spots Remaining</span></div>
@@ -842,10 +1109,9 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     <div class="pricing-disclaimer">All rates are per-project. Direct access to principal on every engagement. &nbsp;&middot;&nbsp; Founding tier closes permanently at 5 clients. &nbsp;&middot;&nbsp; Institutional tier available by referral only. &nbsp;&middot;&nbsp; Retainer options available after first engagement. &nbsp;&middot;&nbsp; Creative Partnership requires executed agreement prior to commencement.</div>
   </div>
 </section>
-
 <section id="audience">
   <div class="audience-left">
-    <div class="section-header"><span class="section-label">// 03 &mdash; Who We Serve</span></div>
+    <div class="section-header"><span class="section-label">// 04 &mdash; Who We Serve</span></div>
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,4rem);line-height:0.95;margin-bottom:2rem;color:var(--white);">The Right<br>Partners</h2>
     <p class="audience-body">We built BAD for the people the industry underserves &mdash; the independent filmmaker who refuses to wait for a studio&rsquo;s permission, the non-profit with a real story and a tight budget, the storytelling organization that knows what it needs but can&rsquo;t afford the overhead of a legacy consultant.</p>
     <ul class="audience-list">
@@ -864,11 +1130,10 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     </div>
   </div>
 </section>
-
 <section id="portfolio">
   <div class="portfolio-inner">
     <div class="section-header">
-      <span class="section-label">// 04 &mdash; The Work in Practice</span>
+      <span class="section-label">// 05 &mdash; The Work in Practice</span>
       <div class="section-rule"></div>
       <h2 class="section-title">Case Studies</h2>
     </div>
@@ -936,7 +1201,97 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     </div>
   </div>
 </section>
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-header">
+      <span class="section-label">// 06 &mdash; Let&rsquo;s Work</span>
+      <div class="section-rule"></div>
+      <h2 class="section-title">Engage BAD</h2>
+    </div>
+    <p class="contact-intro">Tell us about your project. We&rsquo;ll get back to you fast &mdash; no runaround, no discovery call required to know if we&rsquo;re the right fit.</p>
 
+    <div class="contact-grid">
+      <div class="contact-form-col">
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="contact-hidden"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+
+          <div class="form-row form-row-split">
+            <div class="form-group">
+              <label class="form-label" for="fname">Full Name <span class="form-req">*</span></label>
+              <input class="form-input" type="text" id="fname" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fcompany">Company / Project Name</label>
+              <input class="form-input" type="text" id="fcompany" name="company" placeholder="If applicable">
+            </div>
+          </div>
+
+          <div class="form-row form-row-split">
+            <div class="form-group">
+              <label class="form-label" for="femail">Email <span class="form-req">*</span></label>
+              <input class="form-input" type="email" id="femail" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fphone">Phone Number</label>
+              <input class="form-input" type="tel" id="fphone" name="phone" placeholder="(504) 000-0000">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Service(s) Needed <span class="form-req">*</span></label>
+              <div class="form-checks">
+                <label class="form-check"><input type="checkbox" name="services" value="Script Coverage"><span>Script Coverage</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Budget Architecture"><span>Budget Architecture</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Strategic Development"><span>Strategic Development</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Full Production Binder"><span>Full Production Binder</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Pre-Visualization Suite"><span>Pre-Visualization Suite</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Pre-Pitch Sprint"><span>Pre-Pitch Sprint</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Production Audit"><span>Production Audit</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Web Design - Starter"><span>Web Design &mdash; Starter</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Web Design - Business + Booking"><span>Web Design &mdash; Business + Booking</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Web Design - Flagship"><span>Web Design &mdash; Flagship</span></label>
+                <label class="form-check"><input type="checkbox" name="services" value="Not sure yet"><span>Not sure yet &mdash; let&rsquo;s talk</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row form-row-split">
+            <div class="form-group">
+              <label class="form-label" for="fbest">Best Time to Reach You</label>
+              <select class="form-input form-select" id="fbest" name="best_time">
+                <option value="" disabled selected>Select a window</option>
+                <option value="Morning (9am - 12pm)">Morning &mdash; 9am to 12pm</option>
+                <option value="Afternoon (12pm - 4pm)">Afternoon &mdash; 12pm to 4pm</option>
+                <option value="Evening (4pm - 7pm)">Evening &mdash; 4pm to 7pm</option>
+                <option value="Anytime">Anytime works</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fbudget">Approximate Budget</label>
+              <select class="form-input form-select" id="fbudget" name="budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="Under $500">Under $500</option>
+                <option value="$500 - $1,500">$500 &mdash; $1,500</option>
+                <option value="$1,500 - $5,000">$1,500 &mdash; $5,000</option>
+                <option value="$5,000 - $15,000">$5,000 &mdash; $15,000</option>
+                <option value="$15,000+">$15,000+</option>
+                <option value="Flexible / Let's talk">Flexible &mdash; let&rsquo;s talk</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fmessage">Tell Us About Your Project</label>
+              <textarea class="form-input form-textarea" id="fmessage" name="message" placeholder="What are you working on? Where are you in the process? What do you need most right now?"></textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <button type="submit" class="form-submit">Send It</button>
+          </div>
 <section id="cta">
   <div class="cta-inner">
     <h2 class="cta-headline">Ready to Build<br>Something Real?</h2>
@@ -944,13 +1299,6 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
     <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="btn-dark">BeautifulAnarchyDesigns@gmail.com</a>
   </div>
 </section>
-
-<footer>
-  <div class="footer-brand">Beautiful Anarchy Designs</div>
-  <div class="footer-tagline">We are the Beauty, in Chaos.</div>
-  <a href="mailto:BeautifulAnarchyDesigns@gmail.com" class="footer-contact">BeautifulAnarchyDesigns@gmail.com</a>
-</footer>
-
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -992,6 +1340,26 @@ footer{padding:3rem;display:flex;justify-content:space-between;align-items:cente
       document.querySelectorAll('.tier-panel').forEach(function(p){p.classList.remove('active');});
       tab.classList.add('active');
       document.getElementById(tab.dataset.tier).classList.add('active');
+    });
+  });
+
+  // Web design tier tabs
+  document.querySelectorAll('.web-tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('.web-tab').forEach(function(t){t.classList.remove('active');});
+      document.querySelectorAll('.web-panel').forEach(function(p){p.classList.remove('active');});
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.web).classList.add('active');
+    });
+  });
+  
+  // Comparison tabs
+  document.querySelectorAll('.comp-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.comp-tab').forEach(function(t){ t.classList.remove('active'); });
+      document.querySelectorAll('.comp-panel').forEach(function(p){ p.classList.remove('active'); });
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.panel).classList.add('active');
     });
   });
 </script>
